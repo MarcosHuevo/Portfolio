@@ -1,0 +1,1459 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio de Marcos Agulló, diseñador gráfico. Ilustración, animación y vídeo, diseño y maquetación y web. Disponible para proyectos.">
+    <title>Marcos Agulló — Diseñador gráfico | Portfolio</title>
+
+    <link rel="icon" type="image/png" href="LogoHuevo.png">
+    <link rel="apple-touch-icon" href="LogoHuevo.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&family=Shantell+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Tema oscuro: se aplica antes de pintar para que no parpadee -->
+    <script>
+        try {
+            if (localStorage.getItem('tema') === 'dark') {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            }
+        } catch (e) {}
+    </script>
+    <script>
+        // Pantalla de carga: solo la primera vez que se entra en la sesión
+        try {
+            if (!sessionStorage.getItem('loaderVisto') && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.documentElement.classList.add('loading');
+            }
+        } catch (e) {}
+    </script>
+</head>
+
+<body id="inicio">
+
+    <!-- Pantalla de carga: solo se ve con la clase "loading" en <html> -->
+    <div class="loader" aria-hidden="true">
+        <img src="LogoHuevo.png" alt="" class="loader-egg">
+    </div>
+
+    <!-- Cursor-huevo (solo con ratón) -->
+    <div class="egg-cursor" aria-hidden="true"></div>
+
+    <!-- Barra de progreso del scroll -->
+    <div class="scroll-progress" aria-hidden="true"></div>
+
+    <!-- Botón flotante de contacto (solo móvil) -->
+    <a class="fab-contact" href="#contacto" aria-hidden="true" tabindex="-1">Contacto</a>
+
+    <!-- Cabecera -->
+    <header class="navbar">
+        <nav class="nav-inner">
+            <a href="#inicio" class="logo" aria-label="Volver al inicio">
+                <img src="LogoHuevoM.png" alt="Marcos Agulló" class="logo-mark logo-mark--light">
+                <!-- Logo para el tema oscuro -->
+                <img src="LogoHuevoM_Negro.png" alt="" class="logo-mark logo-mark--dark" aria-hidden="true">
+            </a>
+
+            <button class="nav-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-links">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <div class="nav-links" id="nav-links">
+                <a href="#inicio">Inicio</a>
+                <a href="#proyectos">Proyectos</a>
+                <a href="#sobre-mi">Sobre mí</a>
+                <a href="#contacto">Contacto</a>
+            </div>
+
+            <button class="theme-toggle" type="button" aria-label="Activar modo oscuro" aria-pressed="false">
+                <svg class="icon-moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/>
+                </svg>
+                <svg class="icon-sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <circle cx="12" cy="12" r="4"/>
+                    <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>
+                </svg>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Página principal -->
+    <main id="home-view">
+
+        <!-- Portada -->
+        <section class="hero section">
+            <div class="hero-content">
+                <p class="eyebrow">PORTFOLIO · DISEÑO GRÁFICO</p>
+                <h1 id="hero-title"><span class="type-line" data-text="Marcos"></span><br><span class="type-line" data-text="Agulló"></span></h1>
+                <!-- Los roles se escriben solos; sin JS se ve la lista fija -->
+                <p class="hero-role" aria-label="Ilustración, animación y vídeo, diseño y web"><span class="role-text" aria-hidden="true">Ilustración · Animación · Diseño · Web</span><span class="role-caret" aria-hidden="true"></span></p>
+            </div>
+        </section>
+
+        <!-- Proyectos -->
+        <section id="proyectos" class="section projects">
+            <div class="section-title">
+                <h2><span class="mark">Mis<br>Proyectos</span></h2>
+            </div>
+
+            <div class="project-list">
+
+                <a class="project-card" href="#ilustraciones">
+                    <div class="project-thumb wire-thumb wire-1"></div>
+                    <div class="project-info">
+                        <h3>Ilustración</h3>
+                        <p>Ilustraciones realizadas en diferentes estilos y técnicas.</p>
+                    </div>
+                    <span class="card-arrow" aria-hidden="true"></span>
+                </a>
+
+                <a class="project-card" href="#animacion-video">
+                    <div class="project-thumb wire-thumb wire-2"></div>
+                    <div class="project-info">
+                        <h3>Animación y vídeo</h3>
+                        <p>Animaciones, edición y montaje realizados en Photoshop, Premiere Pro y After Effects.</p>
+                    </div>
+                    <span class="card-arrow" aria-hidden="true"></span>
+                </a>
+
+                <a class="project-card" href="#diseno">
+                    <div class="project-thumb wire-thumb wire-3"></div>
+                    <div class="project-info">
+                        <h3>Diseño y maquetación</h3>
+                        <p>Maquetación, cartelería, branding y ejercicios de marketing.</p>
+                    </div>
+                    <span class="card-arrow" aria-hidden="true"></span>
+                </a>
+
+                <a class="project-card" href="#web">
+                    <div class="project-thumb wire-thumb wire-4"></div>
+                    <div class="project-info">
+                        <h3>Web</h3>
+                        <p>Páginas web diseñadas y maquetadas con HTML y CSS.</p>
+                    </div>
+                    <span class="card-arrow" aria-hidden="true"></span>
+                </a>
+
+            </div>
+
+            <div class="in-progress">
+                <h3 class="in-progress-title">Proyectos recientes</h3>
+
+                <div class="project-list">
+
+                    <div class="project-card project-card--wip">
+                        <div class="project-thumb wip-thumb">
+                            <span class="wip-badge">En curso</span>
+                        </div>
+                        <div class="project-info">
+                            <h4>Colaboración con Actos Anónimos</h4>
+                            <p>Colaboro con la cuenta de Instagram @actos.anonimos: estoy trabajando para su imagen online.</p>
+                        </div>
+                    </div>
+
+                    <div class="project-card project-card--wip">
+                        <div class="project-thumb wip-thumb">
+                            <!-- Portada en Portadas/PortadaAlaDeriva (.jpg, .jpeg, .png o .webp: se detecta sola) -->
+                            <img class="thumb-media cover-img" data-base="Portadas/PortadaAlaDeriva" alt="Portada del disco A la deriva" hidden>
+                            <span class="wip-badge">Realizado</span>
+                        </div>
+                        <div class="project-info">
+                            <h4>Portada de disco</h4>
+                            <p>Diseño de la portada de un disco para dos cantantes.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Herramientas -->
+        <section id="herramientas" class="section tools">
+            <h2><span class="mark">Herramientas</span></h2>
+            <p class="tools-hint">Pulsa una herramienta para ver los trabajos hechos con ella.</p>
+
+            <div class="tool-list">
+                <span data-ico="Bl" style="--ico:#f5a04a">Blender</span>
+                <span data-ico="Ma" style="--ico:#5fc4c0">Maya</span>
+                <span data-ico="3d" style="--ico:#7bc67e">3ds Max</span>
+                <span data-ico="Ps" style="--ico:#5aa9e6">Photoshop</span>
+                <span data-ico="Ai" style="--ico:#f2a65a">Illustrator</span>
+                <span data-ico="Id" style="--ico:#ee7fa0">InDesign</span>
+                <span data-ico="Ae" style="--ico:#a58be6">After Effects</span>
+                <span data-ico="Pr" style="--ico:#8e7be0">Premiere Pro</span>
+                <span data-ico="Su" style="--ico:#ef6a5a">Substance</span>
+            </div>
+        </section>
+
+        <!-- Sobre mí -->
+        <section id="sobre-mi" class="section about">
+            <div class="section-title">
+                <h2><span class="mark">Sobre<br>mí</span></h2>
+            </div>
+
+            <div class="about-card">
+                <div class="portrait">
+                    <span>Tu foto</span>
+                    <img src="Perf_Img.png" alt="Retrato de Marcos Agulló" class="portrait-img" onerror="this.hidden = true">
+                </div>
+
+                <div class="about-text">
+                    <p class="about-greeting">Hola, soy Marcos Agulló.</p>
+                    <p>
+                        Soy una persona creativa con interés por construir ideas,
+                        experiencias y proyectos con identidad. Me gusta combinar
+                        diseño visual, curiosidad y atención al detalle para crear
+                        cosas que se sientan auténticas y fáciles de entender.
+                    </p>
+                    <p>
+                        Siempre estoy explorando nuevas formas de aprender,
+                        experimentar y mejorar mi trabajo.
+                    </p>
+
+                    <dl class="about-facts">
+                        <div><dt>Estudios</dt><dd>Animación, Diseño Transmedia</dd></div>
+                        <div><dt>Ciudad</dt><dd>Madrid</dd></div>
+                        <div><dt>Idiomas</dt><dd>Español, Inglés</dd></div>
+                    </dl>
+
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/marcos-agulló-sánchez-516955279/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                            <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path fill="currentColor" d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.75h4v11H3v-11zm6.5 0h3.8v1.5h.05c.53-1 1.83-1.85 3.77-1.85 4.03 0 4.78 2.5 4.78 5.75v5.6h-4v-4.97c0-1.19-.02-2.71-1.75-2.71-1.75 0-2.02 1.29-2.02 2.63v5.05h-4v-11z"/></svg>
+                        </a>
+                        <a href="https://www.instagram.com/huevo.zip/?hl=es" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                            <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.4" cy="6.6" r="1.2" fill="currentColor"/></svg>
+                        </a>
+                    </div>
+
+                    <!-- CV en la carpeta CV/ (o cambia el href) -->
+                    <a class="cv-button" href="CV/CV-Marcos-Agullo.pdf" download>
+                        Descargar CV
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contacto -->
+        <section id="contacto" class="section contact">
+            <p class="eyebrow">¿ME CUENTAS TU IDEA?</p>
+            <h2><span class="mark">Contacto</span></h2>
+
+            <div class="contact-links">
+                <div class="contact-link contact-link--email">
+                    <span>Email</span>
+                    <span class="email-actions">
+                        <a href="mailto:marcosagullo8103@gmail.com">marcosagullo8103@gmail.com</a>
+                        <button class="copy-email" type="button" data-email="marcosagullo8103@gmail.com">Copiar</button>
+                        <span class="sr-only" role="status" aria-live="polite" id="copy-status"></span>
+                    </span>
+                </div>
+
+                <a class="contact-link" href="https://www.linkedin.com/in/marcos-agulló-sánchez-516955279/" target="_blank" rel="noopener noreferrer">
+                    <span>LinkedIn</span>
+                    <span>linkedin.com/in/MarcosAgulló</span>
+                </a>
+
+                <a class="contact-link" href="https://www.instagram.com/huevo.zip/?hl=es" target="_blank" rel="noopener noreferrer">
+                    <span>Instagram</span>
+                    <span>@huevo.zip</span>
+                </a>
+            </div>
+
+            <!-- Tarjeta de contacto (.vcf) para la agenda -->
+            <a class="cv-button save-contact" href="data:text/vcard;charset=utf-8,BEGIN%3AVCARD%0D%0AVERSION%3A3.0%0D%0AFN%3AMarcos%20Agull%C3%B3%0D%0AN%3AAgull%C3%B3%3BMarcos%3B%3B%3B%0D%0ATITLE%3ADise%C3%B1o%20gr%C3%A1fico%0D%0AEMAIL%3BTYPE%3DINTERNET%3Amarcosagullo8103%40gmail.com%0D%0AURL%3Ahttps%3A//www.linkedin.com/in/marcos-agull%25C3%25B3-s%25C3%25A1nchez-516955279/%0D%0AURL%3Ahttps%3A//www.instagram.com/huevo.zip/%0D%0AEND%3AVCARD%0D%0A" download="Marcos-Agullo.vcf">
+                Guardar contacto
+            </a>
+        </section>
+
+        <a class="to-top" href="#inicio" aria-label="Volver arriba">↑</a>
+    </main>
+
+    <!-- Mini juego: memory -->
+    <main id="memory" class="subpage" hidden>
+        <section class="portfolio-section section">
+            <div class="section-heading">
+                <h1><span class="mark">Memory</span></h1>
+                <a href="#herramientas" class="back-arrow" aria-label="Volver a herramientas">←</a>
+            </div>
+
+            <p class="memory-intro">Encuentra las parejas con mis ilustraciones.</p>
+
+            <div class="memory-bar">
+                <p>Movimientos <b id="mem-moves">0</b></p>
+                <p>Parejas <b id="mem-pairs">0</b>/<b id="mem-total">0</b></p>
+                <p>Mejor <b id="mem-best">–</b></p>
+                <button class="cv-button memory-reset" type="button">Reiniciar</button>
+            </div>
+
+            <div class="memory-grid" id="memory-grid" role="group" aria-label="Tablero de cartas"></div>
+
+            <p class="memory-win" id="memory-win" hidden>
+                <span class="memory-win-title">¡Pareja completa en <b id="mem-final">0</b> movimientos!</span>
+                <span class="memory-win-text">Gracias por jugar un rato. Si te ha gustado lo que has visto, sigue mirando mis
+                    <a href="#proyectos">proyectos</a> o <a href="#contacto">cuéntame tu idea</a>.</span>
+            </p>
+            <p class="sr-only" id="mem-live" aria-live="polite"></p>
+        </section>
+        <a class="to-top" href="#memory" aria-label="Volver arriba">↑</a>
+    </main>
+
+    <!-- Ilustraciones -->
+    <main id="ilustraciones" class="subpage" hidden>
+        <section class="portfolio-section section">
+            <div class="section-heading">
+                <h1><span class="mark">Ilustraciones</span></h1>
+                <a href="#proyectos" class="back-arrow" aria-label="Volver a proyectos">←</a>
+            </div>
+
+            <div class="illustration-grid">
+                <!-- Imágenes en la carpeta Ilustraciones/ (o cambia el src) -->
+                <div class="art art-1">
+                    <span>01</span>
+                    <img src="Ilustraciones/Bigotes.png" alt="Ilustración 1" onerror="this.hidden = true">
+                </div>
+                <div class="art art-2">
+                    <span>02</span>
+                    <img src="Ilustraciones/Maguito.png" alt="Ilustración 2" onerror="this.hidden = true">
+                </div>
+                <div class="art art-3">
+                    <span>03</span>
+                    <img src="Ilustraciones/Pitungui.png" alt="Ilustración 3" onerror="this.hidden = true">
+                </div>
+                <div class="art art-4">
+                    <span>04</span>
+                    <img src="Ilustraciones/Ascensor.jpeg" alt="Ilustración 4" onerror="this.hidden = true">
+                </div>
+                <div class="art art-5">
+                    <span>05</span>
+                    <img src="Ilustraciones/Lombriz.jpeg" alt="Ilustración 5" onerror="this.hidden = true">
+                </div>
+                <div class="art art-6">
+                    <span>06</span>
+                    <img src="Ilustraciones/ciev.png" alt="Ilustración 6" onerror="this.hidden = true">
+                </div>
+                <div class="art art-7">
+                    <span>07</span>
+                    <img src="Ilustraciones/CosoRata.png" alt="Ilustración 7" onerror="this.hidden = true">
+                </div>
+                <div class="art art-8">
+                    <span>08</span>
+                    <img src="Ilustraciones/SmiliF_BM.png" alt="Ilustración 8" onerror="this.hidden = true">
+                </div>
+                <div class="art art-9">
+                    <span>09</span>
+                    <img src="Ilustraciones/snail.png" alt="Ilustración 9" onerror="this.hidden = true">
+                </div>
+                <div class="art art-10">
+                    <span>10</span>
+                    <img src="Ilustraciones/SueñoFebril.png" alt="Ilustración 10" onerror="this.hidden = true">
+                </div>
+                <div class="art art-11">
+                    <span>11</span>
+                    <img src="Ilustraciones/Ratata01.png" alt="Ilustración 11" onerror="this.hidden = true">
+                </div>
+                <div class="art art-12">
+                    <span>12</span>
+                    <img src="Ilustraciones/Octo.png" alt="Ilustración 12" onerror="this.hidden = true">
+                </div>
+            </div>
+
+            <a class="next-project" href="#animacion-video">
+                <span class="next-project-label">Siguiente proyecto</span>
+                <span class="next-project-title">Animación y vídeo <span aria-hidden="true">→</span></span>
+            </a>
+        </section>
+
+        <a class="to-top" href="#ilustraciones" aria-label="Volver arriba">↑</a>
+    </main>
+
+    <!-- Animación y vídeo -->
+    <main id="animacion-video" class="subpage" hidden>
+        <section class="portfolio-section section">
+            <div class="section-heading">
+                <h1><span class="mark">Animación y vídeo</span></h1>
+                <a href="#proyectos" class="back-arrow" aria-label="Volver a proyectos">←</a>
+            </div>
+
+            <!-- GIF y vídeos en la carpeta AnimacionVideo/ (o cambia el src) -->
+            <div class="media-list">
+                <div class="media-project">
+                    <div class="media-placeholder animation-thumb large">
+                        <div class="hill hill-back"></div>
+                        <div class="hill hill-front"></div>
+                        <div class="building"></div>
+                        <img src="AnimacionVideo/Payasete.gif" alt="Animación de un payaso" onerror="this.hidden = true">
+                    </div>
+                    <div class="media-description">
+                        <h3>GIF en Photoshop</h3>
+                        <p>
+                            Pequeña animación de un payaso hecha en Photoshop.
+                        </p>
+                        <ul class="work-tags" aria-label="Herramientas usadas"><li>Photoshop</li></ul>
+                    </div>
+                </div>
+
+                <div class="media-project">
+                    <div class="media-placeholder animation-thumb large">
+                        <div class="hill hill-back"></div>
+                        <div class="hill hill-front"></div>
+                        <div class="building"></div>
+                        <video src="AnimacionVideo/RenderPrograma.mp4" poster="AnimacionVideo/RenderPrograma.jpg" controls playsinline preload="none" onerror="this.hidden = true"></video>
+                    </div>
+                    <div class="media-description">
+                        <h3>Edición de anuncio</h3>
+                        <p>
+                            Edición y maquetación de un anuncio de un programa usando Premiere Pro y After Effects.
+                        </p>
+                        <ul class="work-tags" aria-label="Herramientas usadas"><li>Premiere Pro</li><li>After Effects</li></ul>
+                    </div>
+                </div>
+
+                <!-- Plantilla para un trabajo nuevo: copia este bloque sin las marcas de comentario
+                <div class="media-project">
+                    <div class="media-placeholder animation-thumb large">
+                        <video src="AnimacionVideo/nombre.mp4" poster="AnimacionVideo/nombre.jpg" controls playsinline preload="none" onerror="this.hidden = true"></video>
+                    </div>
+                    <div class="media-description">
+                        <h3>Título del trabajo</h3>
+                        <p>De qué proyecto es, tu papel y con qué herramientas lo hiciste.</p>
+                        <ul class="work-tags" aria-label="Herramientas usadas"><li>After Effects</li></ul>
+                    </div>
+                </div>
+                -->
+            </div>
+
+            <a class="next-project" href="#diseno">
+                <span class="next-project-label">Siguiente proyecto</span>
+                <span class="next-project-title">Diseño y maquetación <span aria-hidden="true">→</span></span>
+            </a>
+        </section>
+        <a class="to-top" href="#animacion-video" aria-label="Volver arriba">↑</a>
+    </main>
+
+    <!-- Diseño y maquetación -->
+    <main id="diseno" class="subpage" hidden>
+        <section class="portfolio-section section">
+            <div class="section-heading">
+                <h1><span class="mark">Diseño y maquetación</span></h1>
+                <a href="#proyectos" class="back-arrow" aria-label="Volver a proyectos">←</a>
+            </div>
+
+            <!-- Imágenes en Diseno/ (la extensión se detecta sola). Para más trabajos, usa la plantilla de abajo -->
+            <div class="media-list">
+                <div class="media-project">
+                    <div class="media-placeholder large fit">
+                        <img data-base="Diseno/Cartelito" alt="Cartel pegado en la pared">
+                    </div>
+                    <div class="media-description">
+                        <h3>Cartel pegado en la pared</h3>
+                        <p>Cartel de diseño gráfico.</p>
+                        <ul class="work-tags" aria-label="Herramientas usadas"><li>Photoshop</li></ul>
+                    </div>
+                </div>
+
+                <!-- Plantilla para un trabajo nuevo: copia este bloque sin las marcas de comentario
+                <div class="media-project">
+                    <div class="media-placeholder large">
+                        <img src="Diseno/nombre.jpg" alt="Descripción de la imagen" onerror="this.hidden = true">
+                    </div>
+                    <div class="media-description">
+                        <h3>Título del trabajo</h3>
+                        <p>Objetivo del encargo, tu papel y el resultado.</p>
+                        <ul class="work-tags" aria-label="Herramientas usadas"><li>InDesign</li><li>Illustrator</li></ul>
+                    </div>
+                </div>
+                -->
+            </div>
+
+            <a class="next-project" href="#web">
+                <span class="next-project-label">Siguiente proyecto</span>
+                <span class="next-project-title">Web <span aria-hidden="true">→</span></span>
+            </a>
+        </section>
+        <a class="to-top" href="#diseno" aria-label="Volver arriba">↑</a>
+    </main>
+
+    <!-- Web -->
+    <main id="web" class="subpage" hidden>
+        <section class="portfolio-section section">
+            <div class="section-heading">
+                <h1><span class="mark">Web</span></h1>
+                <a href="#proyectos" class="back-arrow" aria-label="Volver a proyectos">←</a>
+            </div>
+
+            <!-- Capturas en Web/. Con webs reales, usa la plantilla de abajo y borra el aviso "Próximamente" -->
+            <p class="empty-note">Próximamente: estoy preparando esta sección.</p>
+
+            <div class="media-list">
+                <!-- Plantilla para una web nueva: copia este bloque sin las marcas de comentario
+                <div class="media-project">
+                    <div class="media-placeholder large">
+                        <img src="Web/nombre.jpg" alt="Captura de la web" onerror="this.hidden = true">
+                    </div>
+                    <div class="media-description">
+                        <h3>Nombre de la web</h3>
+                        <p>Para quién es, qué hace y qué parte hiciste tú.</p>
+                        <ul class="work-tags" aria-label="Herramientas usadas"><li>HTML</li><li>CSS</li></ul>
+                        <a class="cv-button" href="https://tu-web.com" target="_blank" rel="noopener noreferrer">Ver web</a>
+                    </div>
+                </div>
+                -->
+            </div>
+
+            <a class="next-project" href="#ilustraciones">
+                <span class="next-project-label">Siguiente proyecto</span>
+                <span class="next-project-title">Ilustración <span aria-hidden="true">→</span></span>
+            </a>
+        </section>
+        <a class="to-top" href="#web" aria-label="Volver arriba">↑</a>
+    </main>
+
+    <!-- Visor de imágenes y vídeo -->
+    <div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="Ilustración ampliada">
+        <button class="lightbox-close" type="button" aria-label="Cerrar">×</button>
+        <button class="lightbox-prev" type="button" aria-label="Anterior">←</button>
+        <figure class="lightbox-figure">
+            <img class="lightbox-img" src="" alt="">
+            <img class="lightbox-mark" src="LogoHuevo.png" alt="" aria-hidden="true" draggable="false" onerror="this.hidden = true">
+        </figure>
+        <video class="lightbox-video" controls playsinline hidden></video>
+        <button class="lightbox-next" type="button" aria-label="Siguiente">→</button>
+        <p class="lightbox-count"></p>
+    </div>
+
+    <!-- Pie -->
+    <footer>
+        <p class="footer-game">¿Un descanso? <a href="#memory">Echa una partida al memory</a></p>
+        <p>© 2026 Marcos Agulló</p>
+    </footer>
+
+    <script>
+        /* Portfolio · Marcos Agulló
+           Cada bloque es independiente: menú, rutas, memory, visor, escritura del hero, tema, scroll y cursor. */
+
+        // Menú hamburguesa (solo se ve en móvil)
+        (function () {
+            var navbar = document.querySelector('.navbar');
+            var toggle = document.querySelector('.nav-toggle');
+            if (!navbar || !toggle) return;
+
+            function setOpen(open) {
+                navbar.classList.toggle('menu-open', open);
+                toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+                toggle.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+            }
+
+            toggle.addEventListener('click', function () {
+                setOpen(!navbar.classList.contains('menu-open'));
+            });
+
+            // Se cierra al elegir una opción, al pulsar fuera o con Escape
+            document.querySelectorAll('.nav-links a').forEach(function (link) {
+                link.addEventListener('click', function () { setOpen(false); });
+            });
+
+            document.addEventListener('click', function (e) {
+                if (!navbar.contains(e.target)) setOpen(false);
+            });
+
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape') setOpen(false);
+            });
+        })();
+
+        // Enrutado simple por hash: cada "página" vive en el mismo HTML
+        // y se muestra u oculta según el fragmento de la URL.
+        (function () {
+            var subpageIds = ['ilustraciones', 'animacion-video', 'diseno', 'web', 'memory'];
+            var homeView = document.getElementById('home-view');
+
+            // Fundido suave al entrar en una página
+            function playEnter(el) {
+                if (!el) return;
+                el.classList.remove('page-enter');
+                void el.offsetWidth;
+                el.classList.add('page-enter');
+            }
+
+            function route() {
+                var hash = location.hash.slice(1);
+
+                if (subpageIds.indexOf(hash) !== -1) {
+                    // Mostrar una página de proyecto concreta
+                    homeView.hidden = true;
+                    subpageIds.forEach(function (id) {
+                        document.getElementById(id).hidden = (id !== hash);
+                    });
+                    playEnter(document.getElementById(hash));
+                    window.scrollTo(0, 0);
+                } else {
+                    // Mostrar la página principal
+                    if (homeView.hidden) playEnter(homeView);
+                    homeView.hidden = false;
+                    subpageIds.forEach(function (id) {
+                        document.getElementById(id).hidden = true;
+                    });
+
+                    if (hash) {
+                        var target = document.getElementById(hash);
+                        if (target) target.scrollIntoView();
+                    } else {
+                        window.scrollTo(0, 0);
+                    }
+                }
+            }
+
+            window.addEventListener('hashchange', route);
+            window.addEventListener('DOMContentLoaded', route);
+        })();
+
+        // Mini juego: memory con las ilustraciones (las toma de la página de Ilustraciones)
+        (function () {
+            var grid = document.getElementById('memory-grid');
+            if (!grid) return;
+            var movesEl = document.getElementById('mem-moves');
+            var pairsEl = document.getElementById('mem-pairs');
+            var totalEl = document.getElementById('mem-total');
+            var bestEl = document.getElementById('mem-best');
+            var winEl = document.getElementById('memory-win');
+            var finalEl = document.getElementById('mem-final');
+            var live = document.getElementById('mem-live');
+            var first = null, lock = false, moves = 0, pairs = 0, total = 0;
+            var KEY = 'memoryMejor';
+            var PAIRS = 5;
+
+            function getBest() {
+                try { return parseInt(localStorage.getItem(KEY), 10) || 0; } catch (e) { return 0; }
+            }
+            function setBest(n) {
+                try { localStorage.setItem(KEY, String(n)); } catch (e) {}
+            }
+            function showBest() {
+                var b = getBest();
+                bestEl.textContent = b ? b : '–';
+            }
+
+            function items() {
+                return Array.prototype.slice.call(document.querySelectorAll('.illustration-grid .art')).map(function (a, i) {
+                    var im = a.querySelector('img');
+                    return { n: i + 1, src: im ? im.getAttribute('src') : '', alt: im ? im.getAttribute('alt') : 'Ilustración ' + (i + 1) };
+                });
+            }
+
+            function shuffle(a) {
+                for (var i = a.length - 1; i > 0; i--) {
+                    var j = Math.floor(Math.random() * (i + 1));
+                    var t = a[i]; a[i] = a[j]; a[j] = t;
+                }
+                return a;
+            }
+
+            function card(it, pos) {
+                var b = document.createElement('button');
+                b.type = 'button';
+                b.className = 'mem-card';
+                b.setAttribute('data-n', it.n);
+                b.setAttribute('aria-label', 'Carta ' + (pos + 1) + ', boca abajo');
+                b.innerHTML = '<span class="mem-inner"><span class="mem-back" aria-hidden="true"></span>' +
+                    '<span class="mem-face art-' + (((it.n - 1) % 5) + 1) + '"><span class="mem-num">' + it.n + '</span></span></span>';
+                if (it.src) {
+                    var img = document.createElement('img');
+                    img.src = it.src;
+                    img.alt = '';
+                    img.draggable = false;
+                    img.addEventListener('error', function () { img.hidden = true; });
+                    b.querySelector('.mem-face').appendChild(img);
+                }
+                b.addEventListener('click', function () { flip(b, it, pos); });
+                return b;
+            }
+
+            function setLabel(b, pos, text) {
+                b.setAttribute('aria-label', 'Carta ' + (pos + 1) + ', ' + text);
+            }
+
+            function flip(b, it, pos) {
+                if (lock || b.classList.contains('is-flipped') || b.classList.contains('is-matched')) return;
+                b.classList.add('is-flipped');
+                setLabel(b, pos, 'ilustración ' + it.n);
+                if (!first) { first = { b: b, it: it, pos: pos }; return; }
+
+                moves++;
+                movesEl.textContent = moves;
+                var a = first;
+                first = null;
+
+                if (a.it.n === it.n) {
+                    a.b.classList.add('is-matched');
+                    b.classList.add('is-matched');
+                    pairs++;
+                    pairsEl.textContent = pairs;
+                    live.textContent = 'Pareja encontrada';
+                    if (pairs === total) win();
+                } else {
+                    lock = true;
+                    setTimeout(function () {
+                        a.b.classList.remove('is-flipped');
+                        b.classList.remove('is-flipped');
+                        setLabel(a.b, a.pos, 'boca abajo');
+                        setLabel(b, pos, 'boca abajo');
+                        lock = false;
+                    }, 850);
+                }
+            }
+
+            function win() {
+                finalEl.textContent = moves;
+                winEl.hidden = false;
+                var best = getBest();
+                if (!best || moves < best) { setBest(moves); showBest(); }
+                live.textContent = 'Has completado el juego en ' + moves + ' movimientos';
+            }
+
+            function start() {
+                // 5 ilustraciones al azar en cada partida (mejor las que sí tienen imagen)
+                var all = items();
+                var withImg = all.filter(function (it) {
+                    var im = document.querySelector('.illustration-grid .art:nth-child(' + it.n + ') img');
+                    return im && !im.hidden && im.complete && im.naturalWidth > 0;
+                });
+                var list = shuffle(withImg.length >= PAIRS ? withImg : all).slice(0, PAIRS);
+                total = list.length;
+                first = null; lock = false; moves = 0; pairs = 0;
+                movesEl.textContent = '0';
+                pairsEl.textContent = '0';
+                totalEl.textContent = total;
+                winEl.hidden = true;
+                grid.innerHTML = '';
+                grid.style.setProperty('--mem-cols', total <= 4 ? 4 : 5);
+                shuffle(list.concat(list)).forEach(function (it, pos) { grid.appendChild(card(it, pos)); });
+                showBest();
+            }
+
+            document.querySelector('.memory-reset').addEventListener('click', start);
+            start();
+        })();
+
+        // Menú: marca en amarillo la sección en la que estás
+        (function () {
+            var links = Array.prototype.slice.call(document.querySelectorAll('.nav-links a'));
+            var homeView = document.getElementById('home-view');
+            var sections = [
+                { id: 'inicio', el: document.querySelector('.hero') },
+                { id: 'proyectos', el: document.getElementById('proyectos') },
+                { id: 'sobre-mi', el: document.getElementById('sobre-mi') },
+                { id: 'contacto', el: document.getElementById('contacto') }
+            ];
+
+            function setActive(id) {
+                links.forEach(function (a) {
+                    a.classList.toggle('is-active', a.getAttribute('href') === '#' + id);
+                });
+            }
+
+            function update() {
+                // En las páginas de proyecto se marca "Proyectos"
+                if (homeView.hidden) { setActive('proyectos'); return; }
+
+                var current = 'inicio';
+                var atBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4;
+                if (atBottom) {
+                    current = 'contacto';
+                } else {
+                    sections.forEach(function (s) {
+                        if (s.el && s.el.getBoundingClientRect().top <= window.innerHeight * 0.35) current = s.id;
+                    });
+                }
+                setActive(current);
+            }
+
+            var ticking = false;
+            window.addEventListener('scroll', function () {
+                if (ticking) return;
+                ticking = true;
+                requestAnimationFrame(function () { update(); ticking = false; });
+            });
+            window.addEventListener('hashchange', function () { setTimeout(update, 50); });
+            window.addEventListener('DOMContentLoaded', function () { setTimeout(update, 50); });
+        })();
+
+        // Portadas con nombre fijo: prueba varias extensiones; si ninguna existe, se queda el placeholder
+        (function () {
+            var exts = ['jpg', 'jpeg', 'png', 'webp'];
+            document.querySelectorAll('img[data-base]').forEach(function (img) {
+                var n = 0;
+                var card = img.closest('.project-card');
+                function next() {
+                    if (n >= exts.length) { img.hidden = true; return; }
+                    img.src = img.getAttribute('data-base') + '.' + exts[n++];
+                }
+                img.addEventListener('error', next);
+                img.addEventListener('load', function () {
+                    img.hidden = false;
+                    if (!card) return;
+                    card.classList.add('has-cover');
+                    card.setAttribute('tabindex', '0');
+                    card.setAttribute('role', 'button');
+                    card.setAttribute('aria-label', 'Ver la portada en grande');
+                });
+                next();
+            });
+        })();
+
+        // Visor de ilustraciones: se abren en grande al pulsarlas
+        (function () {
+            var box = document.getElementById('lightbox');
+            var img = box.querySelector('.lightbox-img');
+            var video = box.querySelector('.lightbox-video');
+            var count = box.querySelector('.lightbox-count');
+            var mode = 'img';
+            var arts = Array.prototype.slice.call(document.querySelectorAll('.illustration-grid .art'));
+            var list = [];
+            var index = 0;
+            var lastFocus = null;
+            var cover = false;
+
+            function available() {
+                // Solo las ilustraciones cuya imagen existe
+                return arts.map(function (a) { return a.querySelector('img'); })
+                    .filter(function (i) { return i && !i.hidden && i.naturalWidth > 0; });
+            }
+
+            function show(i) {
+                if (mode === 'video') return;
+                index = (i + list.length) % list.length;
+                img.src = list[index].src;
+                img.alt = list[index].alt;
+                count.textContent = (index + 1) + ' / ' + list.length;
+                box.classList.toggle('lightbox--single', list.length < 2);
+            }
+
+            function open(target) {
+                cover = !!target.closest('.project-card--wip');
+                list = cover ? [target] : available();
+                var i = list.indexOf(target);
+                if (i === -1) return;
+                lastFocus = document.activeElement;
+                mode = 'img';
+                box.hidden = false;
+                document.body.style.overflow = 'hidden';
+                show(i);
+                box.querySelector('.lightbox-close').focus();
+            }
+
+            // Vídeos de las fichas: se abren en grande con el botón de ampliar
+            function openVideo(source) {
+                var src = source.currentSrc || source.src;
+                lastFocus = document.activeElement;
+                mode = 'video';
+                list = [];
+                source.pause();
+                img.hidden = true;
+                img.src = '';
+                video.hidden = false;
+                video.src = src;
+                video.currentTime = source.currentTime || 0;
+                video.play().catch(function () {});
+                count.textContent = '';
+                box.classList.add('lightbox--single');
+                box.setAttribute('aria-label', 'Vídeo ampliado');
+                box.hidden = false;
+                document.body.style.overflow = 'hidden';
+                box.querySelector('.lightbox-close').focus();
+            }
+
+            document.querySelectorAll('.media-placeholder video[controls]').forEach(function (v) {
+                var b = document.createElement('button');
+                b.type = 'button';
+                b.className = 'video-expand';
+                b.setAttribute('aria-label', 'Ampliar vídeo');
+                b.textContent = '⤢';
+                b.addEventListener('click', function () { openVideo(v); });
+                v.parentNode.appendChild(b);
+            });
+
+            video.addEventListener('error', function () { if (!box.hidden && mode === 'video') close(); });
+
+            function close() {
+                box.hidden = true;
+                img.src = '';
+                video.pause();
+                video.removeAttribute('src');
+                video.hidden = true;
+                img.hidden = false;
+                mode = 'img';
+                cover = false;
+                box.setAttribute('aria-label', 'Ilustración ampliada');
+                document.body.style.overflow = '';
+                if (lastFocus) lastFocus.focus();
+            }
+
+            document.querySelectorAll('.project-card--wip').forEach(function (c) {
+                var i = c.querySelector('img.cover-img');
+                if (!i) return;
+                c.addEventListener('click', function () { if (c.classList.contains('has-cover')) open(i); });
+                c.addEventListener('keydown', function (e) {
+                    if (c.classList.contains('has-cover') && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); open(i); }
+                });
+            });
+
+            arts.forEach(function (a) {
+                var i = a.querySelector('img');
+                if (!i) return;
+                a.setAttribute('tabindex', '0');
+                a.setAttribute('role', 'button');
+                a.addEventListener('click', function () { open(i); });
+                a.addEventListener('keydown', function (e) {
+                    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(i); }
+                });
+            });
+
+            box.querySelector('.lightbox-close').addEventListener('click', close);
+            box.querySelector('.lightbox-prev').addEventListener('click', function () { show(index - 1); });
+            box.querySelector('.lightbox-next').addEventListener('click', function () { show(index + 1); });
+            box.addEventListener('click', function (e) { if (e.target === box || (cover && e.target === img)) close(); });
+
+            document.addEventListener('keydown', function (e) {
+                if (box.hidden) return;
+                if (e.key === 'Escape') close();
+                if (e.key === 'ArrowLeft') show(index - 1);
+                if (e.key === 'ArrowRight') show(index + 1);
+            });
+
+            // Deslizar con el dedo en móvil
+            var startX = null;
+            box.addEventListener('touchstart', function (e) { startX = e.touches[0].clientX; }, { passive: true });
+            box.addEventListener('touchend', function (e) {
+                if (startX === null) return;
+                var dx = e.changedTouches[0].clientX - startX;
+                if (Math.abs(dx) > 50) show(index + (dx < 0 ? 1 : -1));
+                startX = null;
+            });
+
+            // Si se cambia de página con el visor abierto, se cierra
+            window.addEventListener('hashchange', function () { if (!box.hidden) close(); });
+        })();
+
+        // Copiar el email con un clic
+        (function () {
+            var btn = document.querySelector('.copy-email');
+            if (!btn) return;
+            var timer = null;
+
+            function fallbackCopy(text) {
+                var t = document.createElement('textarea');
+                t.value = text;
+                t.setAttribute('readonly', '');
+                t.style.position = 'fixed';
+                t.style.opacity = '0';
+                document.body.appendChild(t);
+                t.select();
+                var ok = false;
+                try { ok = document.execCommand('copy'); } catch (err) {}
+                document.body.removeChild(t);
+                return ok;
+            }
+
+            function done(ok) {
+                btn.textContent = ok ? '¡Copiado!' : 'No se pudo copiar';
+                var status = document.getElementById('copy-status');
+                if (status) status.textContent = ok ? 'Correo copiado al portapapeles' : 'No se pudo copiar el correo';
+                btn.classList.toggle('is-copied', ok);
+                clearTimeout(timer);
+                timer = setTimeout(function () {
+                    btn.textContent = 'Copiar';
+                    btn.classList.remove('is-copied');
+                    var status = document.getElementById('copy-status');
+                    if (status) status.textContent = '';
+                }, 2000);
+            }
+
+            btn.addEventListener('click', function () {
+                var email = btn.getAttribute('data-email');
+                if (navigator.clipboard && window.isSecureContext) {
+                    navigator.clipboard.writeText(email).then(function () { done(true); }, function () { done(fallbackCopy(email)); });
+                } else {
+                    done(fallbackCopy(email));
+                }
+            });
+        })();
+
+        // Efecto máquina de escribir en el nombre del hero:
+        (function () {
+            var title = document.getElementById('hero-title');
+            if (!title) return;
+
+            var lines = Array.prototype.slice.call(title.querySelectorAll('.type-line'));
+            var texts = lines.map(function (el) { return el.getAttribute('data-text') || ''; });
+
+            var timer = null;
+            var typeSpeed = 90;
+            var eraseSpeed = 55;
+
+            function clearTimer() {
+                if (timer) { clearInterval(timer); timer = null; }
+            }
+
+            function setActive(index) {
+                lines.forEach(function (l, i) { l.classList.toggle('active', i === index); });
+            }
+
+            function clearActive() {
+                lines.forEach(function (l) { l.classList.remove('active'); });
+            }
+
+            // Al terminar de escribir, cada letra pasa a ser un span para poder reaccionar al ratón
+            function wrapLetters() {
+                lines.forEach(function (l, i) {
+                    l.textContent = '';
+                    texts[i].split('').forEach(function (ch) {
+                        var span = document.createElement('span');
+                        span.className = 'letter';
+                        span.setAttribute('aria-hidden', 'true');
+                        span.textContent = ch;
+                        l.appendChild(span);
+                    });
+                });
+                title.setAttribute('aria-label', texts.join(' '));
+            }
+
+            function typeForward() {
+                clearTimer();
+                lines.forEach(function (l) { l.textContent = ''; });
+                var li = 0, ci = 0;
+                setActive(0);
+                timer = setInterval(function () {
+                    if (li >= texts.length) { clearTimer(); clearActive(); wrapLetters(); return; }
+                    var text = texts[li];
+                    if (ci <= text.length) {
+                        lines[li].textContent = text.slice(0, ci);
+                        ci++;
+                    } else {
+                        li++;
+                        ci = 0;
+                        if (li < texts.length) setActive(li);
+                        else { clearTimer(); clearActive(); wrapLetters(); }
+                    }
+                }, typeSpeed);
+            }
+
+            function eraseBackward() {
+                clearTimer();
+                lines.forEach(function (l, i) { l.textContent = texts[i]; });
+                var li = texts.length - 1;
+                setActive(li);
+                timer = setInterval(function () {
+                    if (li < 0) { clearTimer(); clearActive(); return; }
+                    var current = lines[li].textContent;
+                    if (current.length > 0) {
+                        lines[li].textContent = current.slice(0, -1);
+                    } else {
+                        li--;
+                        if (li >= 0) setActive(li);
+                        else { clearTimer(); clearActive(); }
+                    }
+                }, eraseSpeed);
+            }
+
+            lines.forEach(function (l) { l.textContent = ''; });
+
+            var heroSection = document.querySelector('.hero');
+            var state = 'idle'; // idle | typed | erased
+
+            var observer = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        if (state !== 'typed') {
+                            state = 'typed';
+                            typeForward();
+                        }
+                    } else if (entry.boundingClientRect.top < 0) {
+                        // El hero ha quedado por encima del viewport: se ha bajado en la página
+                        if (state !== 'erased') {
+                            state = 'erased';
+                            eraseBackward();
+                        }
+                    }
+                });
+            }, { threshold: 0.3 });
+
+            // Si hay pantalla de carga, el título se escribe cuando termina
+            function startTyping() { if (heroSection) observer.observe(heroSection); }
+            if (document.documentElement.classList.contains('loading')) {
+                document.addEventListener('loaderdone', startTyping, { once: true });
+            } else {
+                startTyping();
+            }
+        })();
+
+        // Pantalla de carga: se quita al cargar la página (mínimo un instante, máximo 4 s)
+        (function () {
+            var root = document.documentElement;
+            if (!root.classList.contains('loading')) return;
+            var start = Date.now();
+            var finished = false;
+
+            function finish() {
+                if (finished) return;
+                finished = true;
+                root.classList.remove('loading');
+                try { sessionStorage.setItem('loaderVisto', '1'); } catch (e) {}
+                document.dispatchEvent(new Event('loaderdone'));
+            }
+
+            function whenLoaded() {
+                setTimeout(finish, Math.max(0, 900 - (Date.now() - start)));
+            }
+
+            if (document.readyState === 'complete') whenLoaded();
+            else window.addEventListener('load', whenLoaded);
+            setTimeout(finish, 4000);
+        })();
+
+        // Modo oscuro: botón del header, se recuerda la elección
+        (function () {
+            var root = document.documentElement;
+            var btn = document.querySelector('.theme-toggle');
+            if (!btn) return;
+
+            function sync() {
+                var dark = root.getAttribute('data-theme') === 'dark';
+                btn.setAttribute('aria-pressed', dark ? 'true' : 'false');
+                btn.setAttribute('aria-label', dark ? 'Activar modo claro' : 'Activar modo oscuro');
+            }
+
+            btn.addEventListener('click', function () {
+                var dark = root.getAttribute('data-theme') !== 'dark';
+                if (dark) {
+                    root.setAttribute('data-theme', 'dark');
+                } else {
+                    root.removeAttribute('data-theme');
+                }
+                try { localStorage.setItem('tema', dark ? 'dark' : 'light'); } catch (e) {}
+                sync();
+            });
+
+            sync();
+        })();
+
+        // Aparición suave de tarjetas y trabajos al hacer scroll
+        (function () {
+            if (!('IntersectionObserver' in window)) return;
+            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+            var items = document.querySelectorAll('.project-card, .media-project, .art, .empty-note, .section-title, .in-progress-title, .tool-list, .about-card, .contact-link');
+            document.documentElement.classList.add('reveal-on');
+
+            var io = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-in');
+                        io.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+            items.forEach(function (el, i) {
+                // Pequeño escalonado entre elementos vecinos
+                el.style.setProperty('--reveal-delay', (i % 3) * 80 + 'ms');
+                io.observe(el);
+            });
+        })();
+
+        // Rotador de roles bajo el nombre: se escriben y se borran uno tras otro
+        (function () {
+            var el = document.querySelector('.role-text');
+            var caret = document.querySelector('.role-caret');
+            if (!el) return;
+            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+            var roles = ['Ilustración', 'Animación y vídeo', 'Diseño y maquetación', 'Web'];
+            var r = 0, c = 0, erasing = false, timer = null, visible = true;
+
+            el.textContent = '';
+            caret.classList.add('is-on');
+
+            function tick() {
+                var word = roles[r];
+                var delay = 75;
+                if (!visible || document.hidden) { timer = setTimeout(tick, 400); return; }
+                if (!erasing) {
+                    c++;
+                    el.textContent = word.slice(0, c);
+                    if (c === word.length) { erasing = true; delay = 1700; }
+                } else {
+                    c--;
+                    el.textContent = word.slice(0, c);
+                    delay = 40;
+                    if (c === 0) { erasing = false; r = (r + 1) % roles.length; delay = 300; }
+                }
+                timer = setTimeout(tick, delay);
+            }
+
+            var hero = document.querySelector('.hero');
+            if (hero && 'IntersectionObserver' in window) {
+                new IntersectionObserver(function (e) { visible = e[0].isIntersecting; }).observe(hero);
+            }
+
+            // Empieza cuando el nombre ya se ha escrito (y la pantalla de carga se ha quitado)
+            function start() { timer = setTimeout(tick, 1700); }
+            if (document.documentElement.classList.contains('loading')) {
+                document.addEventListener('loaderdone', start, { once: true });
+            } else {
+                start();
+            }
+        })();
+
+        // Duración de cada vídeo en su ficha (solo se leen los metadatos, no se descarga el vídeo)
+        (function () {
+            document.querySelectorAll('.media-placeholder video[controls]').forEach(function (v) {
+                var desc = v.closest('.media-project') && v.closest('.media-project').querySelector('.media-description');
+                var title = desc && desc.querySelector('h3');
+                if (!title) return;
+                var probe = document.createElement('video');
+                probe.preload = 'metadata';
+                probe.muted = true;
+                probe.addEventListener('loadedmetadata', function () {
+                    if (!isFinite(probe.duration) || probe.duration <= 0) return;
+                    var total = Math.round(probe.duration);
+                    var m = Math.floor(total / 60), sec = total % 60;
+                    var p = document.createElement('p');
+                    p.className = 'video-duration';
+                    p.textContent = 'Duración ' + m + ':' + (sec < 10 ? '0' : '') + sec;
+                    title.insertAdjacentElement('afterend', p);
+                    probe.removeAttribute('src');
+                });
+                probe.src = v.getAttribute('src');
+            });
+        })();
+
+        // Carga suave de imágenes: aparecen con un fundido cuando terminan de cargar
+        (function () {
+            var imgs = document.querySelectorAll('.thumb-media:not(video), .art img, .media-placeholder img');
+            imgs.forEach(function (img) {
+                if (img.complete && img.naturalWidth > 0) return; // ya cargada: se ve directamente
+                img.classList.add('fade-img');
+                img.addEventListener('load', function () { img.classList.add('is-loaded'); }, { once: true });
+                // Si falla (el archivo no existe) no se muestra nada, como antes
+                img.addEventListener('error', function () { img.classList.add('is-loaded'); }, { once: true });
+            });
+        })();
+
+        // Botón flotante de contacto (móvil): aparece al bajar y se esconde al llegar a Contacto
+        (function () {
+            var fab = document.querySelector('.fab-contact');
+            var target = document.getElementById('contacto');
+            if (!fab || !target) return;
+            var contactVisible = false;
+            var ticking = false;
+
+            function update() {
+                var home = !document.getElementById('home-view').hidden;
+                var show = window.scrollY > 500 && !(home && contactVisible);
+                fab.classList.toggle('is-visible', show);
+                // Solo es accesible mientras se ve
+                fab.setAttribute('aria-hidden', show ? 'false' : 'true');
+                fab.tabIndex = show ? 0 : -1;
+                ticking = false;
+            }
+
+            if ('IntersectionObserver' in window) {
+                new IntersectionObserver(function (e) { contactVisible = e[0].isIntersecting; update(); }).observe(target);
+            }
+            window.addEventListener('scroll', function () {
+                if (!ticking) { ticking = true; requestAnimationFrame(update); }
+            }, { passive: true });
+            window.addEventListener('hashchange', function () { setTimeout(update, 100); });
+            update();
+        })();
+
+        // Protección básica de las imágenes: sin clic derecho ni arrastrar (no impide capturas de pantalla)
+        (function () {
+            var protegido = '.art, .art img, img.thumb-media, .media-placeholder img, .lightbox-figure, .lightbox-img';
+            document.addEventListener('contextmenu', function (e) {
+                if (e.target.closest && e.target.closest(protegido)) e.preventDefault();
+            });
+            document.addEventListener('dragstart', function (e) {
+                if (e.target.tagName === 'IMG' && e.target.closest(protegido)) e.preventDefault();
+            });
+        })();
+
+        // Logo del menú: se encoge y se inclina un poco al bajar por la página
+        (function () {
+            var nav = document.querySelector('.navbar');
+            if (!nav) return;
+            function update() { nav.classList.toggle('is-scrolled', window.scrollY > 60); }
+            window.addEventListener('scroll', update, { passive: true });
+            update();
+        })();
+
+        // Barra de progreso: se llena a medida que se baja en la página
+        (function () {
+            var bar = document.querySelector('.scroll-progress');
+            if (!bar) return;
+            var ticking = false;
+
+            function update() {
+                var max = document.documentElement.scrollHeight - window.innerHeight;
+                var p = max > 0 ? Math.min(1, Math.max(0, window.scrollY / max)) : 0;
+                bar.style.transform = 'scaleX(' + p.toFixed(4) + ')';
+                ticking = false;
+            }
+
+            window.addEventListener('scroll', function () {
+                if (!ticking) { ticking = true; requestAnimationFrame(update); }
+            }, { passive: true });
+            window.addEventListener('resize', update);
+            update();
+        })();
+
+        // Cursor: un huevo que sustituye al cursor normal en toda la página
+        (function () {
+            var egg = document.querySelector('.egg-cursor');
+            if (!egg) return;
+            // Solo con ratón de verdad: no en móvil, ni en pantallas táctiles, ni en ventanas estrechas
+            var desktopMQ = window.matchMedia('(pointer: fine) and (hover: hover) and (min-width: 701px)');
+            if (!desktopMQ.matches) return;
+
+            var root = document.documentElement;
+            var off = false;
+            // En vídeos y campos de texto se deja el cursor normal para poder usarlos
+            var native = 'video, input, textarea';
+            var x = -100, y = -100, moved = false, idleTimer = null;
+
+            function place() {
+                egg.style.transform = 'translate3d(' + x + 'px,' + y + 'px,0)';
+            }
+
+            function setOver(over) {
+                var shown = egg.classList.contains('is-visible');
+                if (over === shown) return;
+                if (over) egg.classList.add('was-shown');
+                root.classList.toggle('egg-on', over);
+                egg.classList.toggle('is-visible', over);
+            }
+
+            // Mira qué hay bajo el ratón ahora mismo (por si la página se ha movido sola)
+            function recheck() {
+                if (!moved) return;
+                var el = document.elementFromPoint(x, y);
+                setOver(!(el && el.closest(native)));
+            }
+
+            // Tras un scroll o un cambio de página se espera a que se calme y se vuelve a mirar,
+            // así el huevo no parpadea mientras pasan elementos por debajo del ratón
+            function recheckLater() {
+                clearTimeout(idleTimer);
+                idleTimer = setTimeout(recheck, 140);
+            }
+
+            // Si se toca la pantalla o se estrecha la ventana, el huevo se quita y no vuelve a salir
+            function disable() {
+                off = true;
+                moved = false;
+                setOver(false);
+                egg.classList.remove('is-down', 'was-shown');
+            }
+            window.addEventListener('touchstart', disable, { passive: true });
+            desktopMQ.addEventListener('change', function (e) { if (!e.matches) disable(); else off = false; });
+
+            window.addEventListener('mousemove', function (e) {
+                if (off) return;
+                x = e.clientX;
+                y = e.clientY;
+                moved = true;
+                place();
+                setOver(!e.target.closest(native));
+            }, { passive: true });
+
+            window.addEventListener('scroll', recheckLater, { passive: true });
+            window.addEventListener('hashchange', function () {
+                // Entre cambio de página y recolocación puede tardar un momento
+                clearTimeout(idleTimer);
+                idleTimer = setTimeout(recheck, 250);
+            });
+
+            document.addEventListener('mouseleave', function () {
+                moved = false;
+                setOver(false);
+            });
+            window.addEventListener('mousedown', function () { if (!off) egg.classList.add('is-down'); });
+            window.addEventListener('mouseup', function () { egg.classList.remove('is-down'); });
+        })();
+
+        // Herramientas: al pulsar una, lleva a los trabajos que la usan
+        (function () {
+            var tools = document.querySelectorAll('.tool-list span');
+            var tags = Array.prototype.slice.call(document.querySelectorAll('.subpage .work-tags li'));
+
+            function norm(t) { return t.trim().toLowerCase(); }
+
+            function worksFor(name) {
+                var n = norm(name);
+                var works = [];
+                tags.forEach(function (li) {
+                    // "Substance" también encuentra "Substance Painter"
+                    if (norm(li.textContent).indexOf(n) === 0) {
+                        var work = li.closest('.media-project');
+                        if (work && works.indexOf(work) === -1) works.push(work);
+                    }
+                });
+                return works;
+            }
+
+            function highlight(works) {
+                document.querySelectorAll('.media-project.is-match').forEach(function (w) {
+                    w.classList.remove('is-match');
+                });
+                var page = works[0].closest('.subpage');
+                works.forEach(function (w) {
+                    if (w.closest('.subpage') === page) {
+                        void w.offsetWidth;
+                        w.classList.add('is-match', 'is-in');
+                    }
+                });
+                works[0].scrollIntoView({ block: 'center' });
+                setTimeout(function () {
+                    works.forEach(function (w) { w.classList.remove('is-match'); });
+                }, 2600);
+            }
+
+            tools.forEach(function (tool) {
+                var name = tool.textContent;
+                if (!worksFor(name).length) return;
+
+                tool.classList.add('has-works');
+                tool.setAttribute('role', 'button');
+                tool.setAttribute('tabindex', '0');
+                tool.setAttribute('title', 'Ver trabajos hechos con ' + name);
+
+                function go() {
+                    var works = worksFor(name);
+                    var pageId = works[0].closest('.subpage').id;
+                    if (location.hash.slice(1) === pageId) {
+                        highlight(works);
+                    } else {
+                        location.hash = pageId;
+                        setTimeout(function () { highlight(works); }, 120);
+                    }
+                }
+
+                tool.addEventListener('click', go);
+                tool.addEventListener('keydown', function (e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        go();
+                    }
+                });
+            });
+        })();
+    </script>
+
+</body>
+</html>
