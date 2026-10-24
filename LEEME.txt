@@ -1,0 +1,27 @@
+PUBLICAR EL PORTFOLIO EN GITHUB PAGES
+
+Esta carpeta ya tiene index.html y styles.css listos. Antes de subir, copia aquí tus archivos
+(con estos nombres exactos, respetando mayúsculas):
+
+  LogoHuevo.png, LogoHuevoM.png, LogoHuevoM_Negro.png, Perf_Img.png
+  Ilustraciones/   (Bigotes.png, Maguito.png, Pitungui.png, Ascensor.jpeg, Lombriz.jpeg,
+                    ciev.png, CosoRata.png, SmiliF_BM.png, snail.png, SueñoFebril.png,
+                    Ratata01.png, Octo.png)
+  AnimacionVideo/  (Payasete.gif, RenderPrograma.mp4, RenderPrograma.jpg)
+  Diseno/          (Cartelito.jpg/.png/.jpeg/.webp)
+  Portadas/        (PortadaAlaDeriva.jpg/.png/.jpeg/.webp)
+  CV/              (CV-Marcos-Agullo.pdf)
+  Web/             (solo cuando tengas capturas)
+
+PASOS
+1. En github.com: New repository, nombre "portfolio" (o "tuusuario.github.io"), Public.
+   No marques "Add a README", para que el repositorio salga vacío.
+2. En la página del repositorio vacío pulsa "uploading an existing file". Si no lo ves:
+   Add file > Upload files. Arrastra TODO el contenido de esta carpeta (incluido .nojekyll
+   y las carpetas) y pulsa Commit changes.
+3. Settings > Pages > Deploy from a branch > main > / (root) > Save.
+4. En 1-2 minutos tu enlace: https://tuusuario.github.io/portfolio/
+
+NOTAS
+- Un archivo no puede pesar más de 25 MB si lo subes desde la web; comprime el MP4 si hace falta.
+- Para actualizar: sube el archivo nuevo al repositorio y se republica solo.
