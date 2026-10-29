@@ -60,9 +60,7 @@ img {
     --soft-line: rgba(23, 23, 23, 0.22);
     --nav-bg: #f5f2ea;
     --yolk: #e9a900;
-    --yolk-light: #f4c43e;
-    --yolk-text: #8a5a00; /* amarillo oscuro para texto sobre fondo claro */
-
+    --yolk-text: #8a5a00;
     --ink: #171717;
     --border-w: 2px;
     --hard-shadow: 4px 4px 0 var(--ink);
@@ -235,7 +233,6 @@ img {
     height: 34px;
 }
 
-/* sol y luna apilados: al cambiar de modo uno gira y se desvanece mientras entra el otro */
 .theme-toggle svg {
     grid-area: 1 / 1;
     stroke-width: 2.4;
@@ -355,11 +352,9 @@ img {
     min-height: max(720px, calc(100svh - 54px));
     display: grid;
     grid-template-columns: 1fr;
-    align-items: center;
-    border-bottom: var(--border-w) solid var(--line);
+    align-items: center;
 }
 
-/* mancha de color muy suave detrás del nombre */
 .hero::before {
     content: "";
     position: absolute;
@@ -402,8 +397,7 @@ img {
 }
 
 #hero-title .type-line::before {
-    content: "\200b"; /* mantiene la altura de la línea mientras está vacía */
-}
+    content: "\200b";}
 
 #hero-title .type-line:first-child {
     font-size: 0.78em;
@@ -526,7 +520,6 @@ img {
         letter-spacing: .08em;
     }
 
-    /* pegatina amarilla sobre los roles */
     .hero-role::before {
         content: "";
         position: absolute;
@@ -569,7 +562,6 @@ img {
     letter-spacing: -.035em;
 }
 
-/* franja amarilla tipo rotulador detrás del texto, una por línea */
 .mark {
     background: linear-gradient(transparent 52%, var(--yolk) 52%, var(--yolk) 94%, transparent 94%);
     -webkit-box-decoration-break: clone;
@@ -582,15 +574,15 @@ img {
 /* ---------- 5. Proyectos ---------- */
 
 .projects {
-    padding: 95px 0;
-    border-bottom: var(--border-w) solid var(--line);
+    padding: 95px 0;
+    position: relative;
 }
 
 .project-list {
     margin-top: 55px;
     display: grid;
-    gap: 0;
-    border-top: var(--border-w) solid var(--line);
+    gap: 0;
+    position: relative;
 }
 
 .project-card {
@@ -599,10 +591,10 @@ img {
     display: grid;
     grid-template-columns: 210px 1fr auto;
     align-items: center;
-    gap: 22px;
-    border-bottom: var(--border-w) solid var(--line);
+    gap: 22px;
     background: transparent;
     transition: background .25s ease;
+    position: relative;
 }
 
 .project-card:hover {
@@ -618,7 +610,6 @@ img {
     transition: transform .35s cubic-bezier(.3, 1.4, .5, 1), box-shadow .3s ease, border-color .3s ease;
 }
 
-/* la miniatura se inclina como una foto polaroid */
 .project-card:not(.project-card--wip):hover .project-thumb {
     transform: rotate(-2.5deg) scale(1.04);
     border-color: var(--text);
@@ -629,7 +620,6 @@ img {
     transform: rotate(2.5deg) scale(1.04);
 }
 
-/* imagen, GIF o vídeo reales: tapan el dibujo de fondo */
 .project-thumb .thumb-media {
     position: absolute;
     inset: 0;
@@ -667,7 +657,6 @@ img {
     opacity: .85;
 }
 
-/* flecha dibujada a mano */
 .card-arrow {
     display: block;
     width: 62px;
@@ -692,13 +681,11 @@ img {
     rotate: -6deg;
 }
 
-/* portadas de las tarjetas: maquetas dibujadas con CSS, como un wireframe */
 .wire-thumb {
     background-color: var(--portrait-bg);
     background-repeat: no-repeat;
 }
 
-/* ilustración: marco con imagen y texto debajo */
 .wire-1 {
     background-image:
         linear-gradient(var(--yolk), var(--yolk)),
@@ -708,7 +695,6 @@ img {
     background-size: 52% 56%, 40% 5%, 28% 4%;
 }
 
-/* vídeo: reproductor con barra de tiempo */
 .wire-2 {
     background-image:
         linear-gradient(var(--text), var(--text)),
@@ -718,7 +704,6 @@ img {
     background-size: 76% 50%, 22% 6%, 72% 3%;
 }
 
-/* diseño: página maquetada a dos columnas */
 .wire-3 {
     background-image:
         linear-gradient(var(--text), var(--text)),
@@ -730,7 +715,6 @@ img {
     background-size: 36% 6%, 36% 3%, 30% 3%, 34% 3%, 34% 54%;
 }
 
-/* web: barra de navegador, cabecera y bloques */
 .wire-4 {
     background-image:
         radial-gradient(circle at 7% 9%, var(--yolk) 0 3px, transparent 4px),
@@ -782,7 +766,6 @@ img {
     background: repeating-linear-gradient(to right, #d5a25a 0 7px, transparent 7px 13px);
 }
 
-/* proyectos recientes */
 .in-progress {
     margin-top: 55px;
 }
@@ -801,9 +784,12 @@ img {
     margin-top: 0;
 }
 
+.in-progress .project-card:last-child::after {
+    display: none;
+}
+
 .project-card--wip {
     cursor: default;
-    border-bottom-style: dashed;
 }
 
 .project-card--wip.has-cover {
@@ -849,7 +835,6 @@ img {
     color: #171717;
 }
 
-/* portada de disco: borrosa en la miniatura, nítida al pasar el ratón */
 .project-card--wip img.cover-img.thumb-media {
     filter: blur(7px) saturate(.9);
     transform: scale(1.1);
@@ -908,9 +893,9 @@ img {
 /* ---------- 6. Páginas de trabajos ---------- */
 
 .portfolio-section {
-    padding: 100px 0;
-    border-bottom: var(--border-w) solid var(--line);
+    padding: 100px 0;
     min-height: 650px;
+    position: relative;
 }
 
 .section-heading {
@@ -918,16 +903,6 @@ img {
     align-items: end;
     justify-content: space-between;
     margin-bottom: 60px;
-}
-
-.empty-note {
-    padding: 70px 24px;
-    border: 1px dashed var(--line);
-    border-radius: var(--radius);
-    text-align: center;
-    font-family: var(--font-aux);
-    font-size: 14px;
-    opacity: .8;
 }
 
 .illustration-grid {
@@ -1025,7 +1000,6 @@ img {
     display: none;
 }
 
-/* el marco se ajusta al tamaño de la imagen en vez de usar 16:9 */
 .media-placeholder.fit {
     width: fit-content;
     max-width: 100%;
@@ -1043,7 +1017,6 @@ img {
     background: none;
 }
 
-/* las imágenes no se seleccionan ni se arrastran */
 .art img,
 img.thumb-media,
 .media-placeholder img,
@@ -1095,16 +1068,15 @@ img.thumb-media,
     box-shadow: var(--hard-shadow);
 }
 
-/* enlace al siguiente proyecto */
 .next-project {
     margin-top: 90px;
     padding: 28px 0;
     display: flex;
     align-items: baseline;
     justify-content: space-between;
-    gap: 20px;
-    border-top: var(--border-w) solid var(--line);
+    gap: 20px;
     transition: color .22s ease, padding-left .22s ease;
+    position: relative;
 }
 
 .next-project:hover {
@@ -1196,7 +1168,6 @@ img.thumb-media,
     cursor: zoom-out;
 }
 
-/* marca de agua: el huevo del logo, pequeño y semitransparente */
 .lightbox-mark {
     position: absolute;
     right: 12px;
@@ -1281,6 +1252,180 @@ img.thumb-media,
 }
 
 
+.hand-arrow {
+    display: inline-block;
+    flex: none;
+    width: 52px;
+    height: 28px;
+    margin-left: 6px;
+    vertical-align: middle;
+    background: currentColor;
+    -webkit-mask: no-repeat center / contain url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 62 34' fill='none' stroke='black' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 19C14 14 22 22 32 17s16-5 26-2'/%3E%3Cpath d='M48 5c5 4 8 7 11 10-3 4-7 8-12 13'/%3E%3C/svg%3E");
+    mask: no-repeat center / contain url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 62 34' fill='none' stroke='black' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 19C14 14 22 22 32 17s16-5 26-2'/%3E%3Cpath d='M48 5c5 4 8 7 11 10-3 4-7 8-12 13'/%3E%3C/svg%3E");
+    transition: translate .25s cubic-bezier(.3, 1.4, .5, 1), rotate .25s ease;
+}
+
+.hand-arrow--back {
+    transform: scaleX(-1);
+}
+
+.next-project:hover .hand-arrow {
+    translate: 8px 0;
+    rotate: -6deg;
+}
+
+.lightbox button .hand-arrow {
+    width: 34px;
+    height: 19px;
+    margin: 0;
+    vertical-align: baseline;
+}
+
+
+.pdf-cover,
+a.media-placeholder {
+    display: block;
+}
+
+.media-description .pdf-button,
+.media-description .project-link {
+    margin-top: 18px;
+}
+
+
+.project-list::before,
+.next-project::before,
+.contact::before,
+.contact-links::before,
+footer::before,
+.hero::after,
+.projects::after,
+.project-card::after,
+.portfolio-section::after,
+.tools::after,
+.contact-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 8px;
+    background: var(--line);
+    -webkit-mask: repeat-x left center / 240px 8px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 8' fill='none' stroke='black' stroke-width='2'%3E%3Cpath d='M0 4C20 .8 40 7.4 70 4S130 1 150 4 220 7.2 240 4'/%3E%3C/svg%3E");
+    mask: repeat-x left center / 240px 8px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 8' fill='none' stroke='black' stroke-width='2'%3E%3Cpath d='M0 4C20 .8 40 7.4 70 4S130 1 150 4 220 7.2 240 4'/%3E%3C/svg%3E");
+    pointer-events: none;
+}
+
+.project-list::before,
+.next-project::before,
+.contact::before,
+.contact-links::before,
+footer::before {
+    top: -4px;
+}
+
+.hero::after,
+.projects::after,
+.project-card::after,
+.portfolio-section::after,
+.tools::after,
+.contact-link::after {
+    bottom: -4px;
+}
+
+
+/* ---------- Foodcare: pantallas de la app ---------- */
+
+.app-intro {
+    max-width: 720px;
+}
+
+.app-intro h2 {
+    font-family: var(--font-aux);
+    font-size: clamp(30px, 4vw, 44px);
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: -.03em;
+}
+
+.app-intro p {
+    margin-top: 14px;
+}
+
+.app-themes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 22px;
+}
+
+.app-theme {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.app-themes label {
+    padding: 6px 14px;
+    border: var(--border-w) solid var(--line);
+    border-radius: 999px;
+    font-family: var(--font-aux);
+    font-size: 12px;
+    cursor: pointer;
+    transition: background-color .2s ease;
+}
+
+.app-themes label:hover {
+    background: var(--card-hover);
+}
+
+.app-theme:checked + label {
+    background: var(--yolk);
+    color: #171717;
+}
+
+.app-theme:focus-visible + label {
+    outline: 2px solid var(--ink);
+    outline-offset: 3px;
+}
+
+.media-list:has(#foodcare-claro:checked) .theme-oscuro,
+.media-list:has(#foodcare-oscuro:checked) .theme-claro {
+    display: none;
+}
+
+.app-shots {
+    display: flex;
+    justify-content: center;
+    gap: clamp(12px, 2vw, 22px);
+    min-width: 0;
+}
+
+.app-shots figure {
+    flex: 0 1 31%;
+    min-width: 0;
+}
+
+.app-shots--2 figure {
+    flex-basis: 40%;
+}
+
+.app-shots img {
+    width: 100%;
+    height: auto;
+    border: var(--border-w) solid var(--line);
+    border-radius: clamp(14px, 2vw, 22px);
+    box-shadow: var(--hard-shadow-sm);
+}
+
+.app-shots figcaption {
+    margin-top: 12px;
+    font-family: var(--font-aux);
+    font-size: 12px;
+    text-align: center;
+    opacity: .85;
+}
+
+
 /* ---------- 8. Sobre mí ---------- */
 
 .about {
@@ -1299,7 +1444,6 @@ img.thumb-media,
     box-shadow: var(--hard-shadow);
 }
 
-/* foto como pegatina: marco de tinta, algo inclinada y con sombra amarilla */
 .portrait {
     position: relative;
     aspect-ratio: .8;
@@ -1329,7 +1473,6 @@ img.thumb-media,
     object-fit: cover;
 }
 
-/* con foto real se quita el texto de relleno */
 .portrait:has(.portrait-img:not([hidden])) {
     opacity: 1;
 }
@@ -1424,8 +1567,8 @@ img.thumb-media,
 /* ---------- 9. Herramientas ---------- */
 
 .tools {
-    padding: 100px 0;
-    border-bottom: var(--border-w) solid var(--line);
+    padding: 100px 0;
+    position: relative;
 }
 
 .tools-hint {
@@ -1437,7 +1580,6 @@ img.thumb-media,
     opacity: .8;
 }
 
-/* flecha dibujada a mano que señala las herramientas */
 .tools-hint::after {
     content: "";
     flex: none;
@@ -1467,7 +1609,6 @@ img.thumb-media,
     transition: background-color .22s ease, border-color .22s ease, transform .22s ease, box-shadow .22s ease;
 }
 
-/* insignia con las iniciales del programa */
 .tool-list span[data-ico] {
     display: inline-flex;
     align-items: center;
@@ -1510,7 +1651,6 @@ img.thumb-media,
     opacity: .55;
 }
 
-/* herramientas que tienen trabajos: se pueden pulsar */
 .tool-list span.has-works {
     cursor: pointer;
     border-color: var(--text);
@@ -1527,7 +1667,6 @@ img.thumb-media,
     outline-offset: 3px;
 }
 
-/* trabajo resaltado al llegar desde una herramienta */
 .media-project.is-match .media-placeholder {
     animation: match-pulse 2.4s ease;
 }
@@ -1560,8 +1699,8 @@ img.thumb-media,
 /* ---------- 10. Contacto y pie ---------- */
 
 .contact {
-    padding: 120px 0;
-    border-top: var(--border-w) solid var(--line);
+    padding: 120px 0;
+    position: relative;
 }
 
 .contact h2 {
@@ -1570,8 +1709,8 @@ img.thumb-media,
 
 .contact-links {
     margin-top: 42px;
-    display: grid;
-    border-top: var(--border-w) solid var(--line);
+    display: grid;
+    position: relative;
 }
 
 .contact-link {
@@ -1579,10 +1718,10 @@ img.thumb-media,
     align-items: center;
     justify-content: space-between;
     gap: 30px;
-    padding: 20px 0;
-    border-bottom: var(--border-w) solid var(--line);
+    padding: 20px 0;
     font-size: 14px;
     transition: color .22s ease, padding-left .22s ease;
+    position: relative;
 }
 
 .contact-link span:first-child {
@@ -1630,8 +1769,8 @@ footer {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    border-top: var(--border-w) solid var(--line);
+    align-items: center;
+    position: relative;
 }
 
 footer p {
@@ -1686,7 +1825,6 @@ footer p {
 
 /* ---------- 11. Botones e iconos ---------- */
 
-/* botones de texto: contorno grueso y sombra dura que se hunde al pulsar */
 .cv-button,
 .copy-email,
 .fab-contact {
@@ -1789,12 +1927,10 @@ footer p {
     box-shadow: 1px 1px 0 var(--ink);
 }
 
-/* botón flotante de contacto, solo en móvil */
 .fab-contact {
     display: none;
 }
 
-/* iconos sueltos (menú, tema, volver, subir, visor): sin caja, solo cambian de color */
 .theme-toggle,
 .nav-toggle,
 .back-arrow,
@@ -1865,10 +2001,8 @@ footer p {
     flex: none;
     width: 62px;
     height: 34px;
-    font-size: 0; /* la flecha es un dibujo, no el texto */
-}
+    font-size: 0;}
 
-/* la misma flecha dibujada a mano de las tarjetas, girada hacia atrás */
 .back-arrow::after {
     content: "";
     display: block;
@@ -1885,23 +2019,47 @@ footer p {
     right: 22px;
     bottom: 22px;
     z-index: 900;
-    width: 44px;
-    height: 44px;
+    width: 38px;
+    height: 38px;
     display: grid;
     place-items: center;
-    font-size: 18px;
-    line-height: 1;
+    font-size: 0;    line-height: 1;
+    border: 1.5px solid var(--ink);
+    border-radius: 50%;
+    background: var(--bg);
+    color: var(--ink);
+    box-shadow: none;
+    transition: background-color .2s ease, translate .2s ease;
 }
 
-/* fijo en la esquina; aparece al pasar la portada, solo con CSS */
+.to-top::after {
+    content: "";
+    display: block;
+    width: 22px;
+    height: 12px;
+    background: currentColor;
+    -webkit-mask: no-repeat center / contain url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 62 34' fill='none' stroke='black' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 19C14 14 22 22 32 17s16-5 26-2'/%3E%3Cpath d='M48 5c5 4 8 7 11 10-3 4-7 8-12 13'/%3E%3C/svg%3E");
+    mask: no-repeat center / contain url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 62 34' fill='none' stroke='black' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 19C14 14 22 22 32 17s16-5 26-2'/%3E%3Cpath d='M48 5c5 4 8 7 11 10-3 4-7 8-12 13'/%3E%3C/svg%3E");
+    rotate: -90deg;
+}
+
+.to-top:hover,
+.to-top:focus-visible {
+    background: var(--yolk);
+    color: #171717;
+}
+
+.to-top:active {
+    translate: 0 1px;
+}
+
 @supports (animation-timeline: scroll()) {
     .to-top {
         opacity: 0;
         visibility: hidden;
         animation: to-top-show linear both;
         animation-timeline: scroll(root block);
-        animation-range: max(774px, 100svh) calc(max(774px, 100svh) + 200px); /* empieza cuando se acaba la portada */
-    }
+        animation-range: max(774px, 100svh) calc(max(774px, 100svh) + 200px);    }
 }
 
 @keyframes to-top-show {
@@ -1947,8 +2105,8 @@ footer p {
     .to-top {
         right: 14px;
         bottom: 14px;
-        width: 40px;
-        height: 40px;
+        width: 36px;
+        height: 36px;
     }
 }
 
@@ -2161,9 +2319,8 @@ footer p {
 
 /* ---------- 13. Efectos y carga ---------- */
 
-/* entrada de página */
 .page-enter {
-    animation: page-enter .7s cubic-bezier(.2, .7, .2, 1) both;
+    animation: page-enter .7s cubic-bezier(.2, .7, .2, 1) backwards;
 }
 
 @keyframes page-enter {
@@ -2171,11 +2328,9 @@ footer p {
     to   { opacity: 1; transform: none; filter: none; }
 }
 
-/* aparición al hacer scroll (la clase reveal-on la pone el JS) */
 .reveal-on .project-card,
 .reveal-on .media-project,
 .reveal-on .art,
-.reveal-on .empty-note,
 .reveal-on .section-title,
 .reveal-on .in-progress-title,
 .reveal-on .tool-list,
@@ -2191,7 +2346,6 @@ footer p {
     translate: 0 0;
 }
 
-/* carga suave de imágenes */
 img.fade-img {
     opacity: 0;
     filter: blur(8px);
@@ -2203,7 +2357,6 @@ img.fade-img.is-loaded {
     filter: none;
 }
 
-/* barra de progreso del scroll */
 .scroll-progress {
     position: fixed;
     top: 0;
@@ -2217,7 +2370,6 @@ img.fade-img.is-loaded {
     pointer-events: none;
 }
 
-/* pantalla de carga */
 .loader {
     display: none;
 }
@@ -2249,7 +2401,6 @@ img.fade-img.is-loaded {
     to   { transform: translateY(-26px) scale(.96, 1.04) rotate(4deg); }
 }
 
-/* cursor: un huevo que sustituye al normal (solo con ratón) */
 .egg-cursor {
     position: fixed;
     top: 0;

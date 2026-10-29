@@ -15,7 +15,7 @@
 
     <link rel="stylesheet" href="styles.css">
 
-    <!-- Tema oscuro: se aplica antes de pintar para que no parpadee -->
+    <!-- Tema oscuro -->
     <script>
         try {
             if (localStorage.getItem('tema') === 'dark') {
@@ -24,7 +24,7 @@
         } catch (e) {}
     </script>
     <script>
-        // Pantalla de carga: solo la primera vez que se entra en la sesión
+        // Pantalla de carga
         try {
             if (!sessionStorage.getItem('loaderVisto') && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
                 document.documentElement.classList.add('loading');
@@ -35,18 +35,18 @@
 
 <body id="inicio">
 
-    <!-- Pantalla de carga: solo se ve con la clase "loading" en <html> -->
+    <!-- Pantalla de carga -->
     <div class="loader" aria-hidden="true">
         <img src="LogoHuevo.png" alt="" class="loader-egg">
     </div>
 
-    <!-- Cursor-huevo (solo con ratón) -->
+    <!-- Cursor -->
     <div class="egg-cursor" aria-hidden="true"></div>
 
     <!-- Barra de progreso del scroll -->
     <div class="scroll-progress" aria-hidden="true"></div>
 
-    <!-- Botón flotante de contacto (solo móvil) -->
+    <!-- Botón de contacto -->
     <a class="fab-contact" href="#contacto" aria-hidden="true" tabindex="-1">Contacto</a>
 
     <!-- Cabecera -->
@@ -54,7 +54,7 @@
         <nav class="nav-inner">
             <a href="#inicio" class="logo" aria-label="Volver al inicio">
                 <img src="LogoHuevoM.png" alt="Marcos Agulló" class="logo-mark logo-mark--light">
-                <!-- Logo para el tema oscuro -->
+                <!-- Logo del tema oscuro -->
                 <img src="LogoHuevoM_Negro.png" alt="" class="logo-mark logo-mark--dark" aria-hidden="true">
             </a>
 
@@ -91,7 +91,6 @@
             <div class="hero-content">
                 <p class="eyebrow">PORTFOLIO · DISEÑO GRÁFICO</p>
                 <h1 id="hero-title"><span class="type-line" data-text="Marcos"></span><br><span class="type-line" data-text="Agulló"></span></h1>
-                <!-- Los roles se escriben solos; sin JS se ve la lista fija -->
                 <p class="hero-role" aria-label="Ilustración, animación y vídeo, diseño y web"><span class="role-text" aria-hidden="true">Ilustración · Animación · Diseño · Web</span><span class="role-caret" aria-hidden="true"></span></p>
             </div>
         </section>
@@ -135,7 +134,7 @@
                     <div class="project-thumb wire-thumb wire-4"></div>
                     <div class="project-info">
                         <h3>Web</h3>
-                        <p>Páginas web diseñadas y maquetadas con HTML y CSS.</p>
+                        <p>Páginas web maquetadas con HTML y CSS y prototipos de app diseñados en Figma.</p>
                     </div>
                     <span class="card-arrow" aria-hidden="true"></span>
                 </a>
@@ -159,7 +158,6 @@
 
                     <div class="project-card project-card--wip">
                         <div class="project-thumb wip-thumb">
-                            <!-- Portada en Portadas/PortadaAlaDeriva (.jpg, .jpeg, .png o .webp: se detecta sola) -->
                             <img class="thumb-media cover-img" data-base="Portadas/PortadaAlaDeriva" alt="Portada del disco A la deriva" hidden>
                             <span class="wip-badge">Realizado</span>
                         </div>
@@ -188,6 +186,7 @@
                 <span data-ico="Ae" style="--ico:#a58be6">After Effects</span>
                 <span data-ico="Pr" style="--ico:#8e7be0">Premiere Pro</span>
                 <span data-ico="Su" style="--ico:#ef6a5a">Substance</span>
+                <span data-ico="Fi" style="--ico:#a98af0">Figma</span>
             </div>
         </section>
 
@@ -230,11 +229,6 @@
                             <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.4" cy="6.6" r="1.2" fill="currentColor"/></svg>
                         </a>
                     </div>
-
-                    <!-- CV en la carpeta CV/ (o cambia el href) -->
-                    <a class="cv-button" href="CV/CV-Marcos-Agullo.pdf" download>
-                        Descargar CV
-                    </a>
                 </div>
             </div>
         </section>
@@ -265,13 +259,13 @@
                 </a>
             </div>
 
-            <!-- Tarjeta de contacto (.vcf) para la agenda -->
+            <!-- Tarjeta de contacto -->
             <a class="cv-button save-contact" href="data:text/vcard;charset=utf-8,BEGIN%3AVCARD%0D%0AVERSION%3A3.0%0D%0AFN%3AMarcos%20Agull%C3%B3%0D%0AN%3AAgull%C3%B3%3BMarcos%3B%3B%3B%0D%0ATITLE%3ADise%C3%B1o%20gr%C3%A1fico%0D%0AEMAIL%3BTYPE%3DINTERNET%3Amarcosagullo8103%40gmail.com%0D%0AURL%3Ahttps%3A//www.linkedin.com/in/marcos-agull%25C3%25B3-s%25C3%25A1nchez-516955279/%0D%0AURL%3Ahttps%3A//www.instagram.com/huevo.zip/%0D%0AEND%3AVCARD%0D%0A" download="Marcos-Agullo.vcf">
                 Guardar contacto
             </a>
         </section>
 
-        <a class="to-top" href="#inicio" aria-label="Volver arriba">↑</a>
+        <a class="to-top" href="#inicio" aria-label="Volver arriba"></a>
     </main>
 
     <!-- Mini juego: memory -->
@@ -300,7 +294,7 @@
             </p>
             <p class="sr-only" id="mem-live" aria-live="polite"></p>
         </section>
-        <a class="to-top" href="#memory" aria-label="Volver arriba">↑</a>
+        <a class="to-top" href="#memory" aria-label="Volver arriba"></a>
     </main>
 
     <!-- Ilustraciones -->
@@ -312,7 +306,6 @@
             </div>
 
             <div class="illustration-grid">
-                <!-- Imágenes en la carpeta Ilustraciones/ (o cambia el src) -->
                 <div class="art art-1">
                     <span>01</span>
                     <img src="Ilustraciones/Bigotes.png" alt="Ilustración 1" onerror="this.hidden = true">
@@ -365,11 +358,11 @@
 
             <a class="next-project" href="#animacion-video">
                 <span class="next-project-label">Siguiente proyecto</span>
-                <span class="next-project-title">Animación y vídeo <span aria-hidden="true">→</span></span>
+                <span class="next-project-title">Animación y vídeo <span class="hand-arrow" aria-hidden="true"></span></span>
             </a>
         </section>
 
-        <a class="to-top" href="#ilustraciones" aria-label="Volver arriba">↑</a>
+        <a class="to-top" href="#ilustraciones" aria-label="Volver arriba"></a>
     </main>
 
     <!-- Animación y vídeo -->
@@ -380,7 +373,6 @@
                 <a href="#proyectos" class="back-arrow" aria-label="Volver a proyectos">←</a>
             </div>
 
-            <!-- GIF y vídeos en la carpeta AnimacionVideo/ (o cambia el src) -->
             <div class="media-list">
                 <div class="media-project">
                     <div class="media-placeholder animation-thumb large">
@@ -391,9 +383,9 @@
                     </div>
                     <div class="media-description">
                         <h3>GIF en Photoshop</h3>
-                        <p>
-                            Pequeña animación de un payaso hecha en Photoshop.
-                        </p>
+                        <p>Ciclo de caminar de un payaso con cuerpo en forma de pera, animado fotograma a fotograma en Photoshop.</p>
+                        <p>El bucle está formado por 8 dibujos que cuidan el balanceo de los brazos, el paso de las piernas y el movimiento de la cabeza, sobre un fondo liso y con una sombra que apoya al personaje en el suelo.</p>
+                        <p>El diseño usa formas sencillas y una paleta de colores planos (verde, naranja, morado y turquesa) que contrasta con el fondo.</p>
                         <ul class="work-tags" aria-label="Herramientas usadas"><li>Photoshop</li></ul>
                     </div>
                 </div>
@@ -407,33 +399,20 @@
                     </div>
                     <div class="media-description">
                         <h3>Edición de anuncio</h3>
-                        <p>
-                            Edición y maquetación de un anuncio de un programa usando Premiere Pro y After Effects.
-                        </p>
+                        <p>Anuncio de un minuto de un programa de coches, editado en Full HD con Premiere Pro y After Effects.</p>
+                        <p>Mezcla la presentadora, tomas del coche en un circuito de conos, planos de detalle del interior y el cierre con bandera de cuadros. Me encargué del montaje, el ritmo entre planos y la maquetación de los gráficos y rótulos, entre ellos la cabecera con el logotipo del programa.</p>
                         <ul class="work-tags" aria-label="Herramientas usadas"><li>Premiere Pro</li><li>After Effects</li></ul>
                     </div>
                 </div>
 
-                <!-- Plantilla para un trabajo nuevo: copia este bloque sin las marcas de comentario
-                <div class="media-project">
-                    <div class="media-placeholder animation-thumb large">
-                        <video src="AnimacionVideo/nombre.mp4" poster="AnimacionVideo/nombre.jpg" controls playsinline preload="none" onerror="this.hidden = true"></video>
-                    </div>
-                    <div class="media-description">
-                        <h3>Título del trabajo</h3>
-                        <p>De qué proyecto es, tu papel y con qué herramientas lo hiciste.</p>
-                        <ul class="work-tags" aria-label="Herramientas usadas"><li>After Effects</li></ul>
-                    </div>
-                </div>
-                -->
             </div>
 
             <a class="next-project" href="#diseno">
                 <span class="next-project-label">Siguiente proyecto</span>
-                <span class="next-project-title">Diseño y maquetación <span aria-hidden="true">→</span></span>
+                <span class="next-project-title">Diseño y maquetación <span class="hand-arrow" aria-hidden="true"></span></span>
             </a>
         </section>
-        <a class="to-top" href="#animacion-video" aria-label="Volver arriba">↑</a>
+        <a class="to-top" href="#animacion-video" aria-label="Volver arriba"></a>
     </main>
 
     <!-- Diseño y maquetación -->
@@ -444,7 +423,6 @@
                 <a href="#proyectos" class="back-arrow" aria-label="Volver a proyectos">←</a>
             </div>
 
-            <!-- Imágenes en Diseno/ (la extensión se detecta sola). Para más trabajos, usa la plantilla de abajo -->
             <div class="media-list">
                 <div class="media-project">
                     <div class="media-placeholder large fit">
@@ -452,31 +430,37 @@
                     </div>
                     <div class="media-description">
                         <h3>Cartel pegado en la pared</h3>
-                        <p>Cartel de diseño gráfico.</p>
+                        <p>Cartel promocional de mi cuenta de Instagram, @huevo.zip, pensado como un anuncio real pegado en una pared de ladrillo.</p>
+                        <p>Un titular directo, "Hey tú!", y un mensaje cercano, "Ya que tengo tu atención, pilla una y sígueme", acompañan a un huevo ilustrado que sirve de marca. Debajo del cartel, las tiras con el usuario imitan los típicos papelitos de recortar, y algunas están ya arrancadas para dar sensación de uso.</p>
+                        <p>Con Photoshop trabajé la composición y las texturas: papel arrugado, cinta adhesiva, bordes rasgados y ladrillo, junto a una tipografía condensada y contundente para que se lea de un vistazo.</p>
                         <ul class="work-tags" aria-label="Herramientas usadas"><li>Photoshop</li></ul>
                     </div>
                 </div>
 
-                <!-- Plantilla para un trabajo nuevo: copia este bloque sin las marcas de comentario
                 <div class="media-project">
-                    <div class="media-placeholder large">
-                        <img src="Diseno/nombre.jpg" alt="Descripción de la imagen" onerror="this.hidden = true">
+                    <div class="media-placeholder large fit">
+                        <a class="pdf-cover" href="Diseno/LibroDisenadores.pdf" target="_blank" rel="noopener" aria-label="Abrir la revista en PDF">
+                            <img data-base="Diseno/LibroDisenadores" alt="Portada de la revista Comer por los ojos">
+                        </a>
                     </div>
                     <div class="media-description">
-                        <h3>Título del trabajo</h3>
-                        <p>Objetivo del encargo, tu papel y el resultado.</p>
-                        <ul class="work-tags" aria-label="Herramientas usadas"><li>InDesign</li><li>Illustrator</li></ul>
+                        <h3>Comer por los ojos</h3>
+                        <p>Revista de diseñadores con temática de libro de cocina, realizada para la asignatura Integración de Herramientas Transmedia.</p>
+                        <p>Cada diseñador se presenta como una receta: Jessica Walsh, Takashi Murakami, Jonas Cozone, Tim Burton, Saul Bass, Stefan Sagmeister, Milton Glaser y Monarobot. En cada capítulo, los ingredientes resumen su estilo, el menú del día repasa su trayectoria y los platos famosos desarrollan su biografía, su filosofía y una selección de sus obras.</p>
+                        <p>Maquetación editorial de 21 páginas con índice, portada ilustrada y una jerarquía tipográfica común para todos los capítulos.</p>
+                        <ul class="work-tags" aria-label="Herramientas usadas"><li>InDesign</li><li>Illustrator</li><li>Photoshop</li></ul>
+                        <a class="cv-button pdf-button" href="Diseno/LibroDisenadores.pdf" target="_blank" rel="noopener">Ver revista en PDF</a>
                     </div>
                 </div>
-                -->
+
             </div>
 
             <a class="next-project" href="#web">
                 <span class="next-project-label">Siguiente proyecto</span>
-                <span class="next-project-title">Web <span aria-hidden="true">→</span></span>
+                <span class="next-project-title">Web <span class="hand-arrow" aria-hidden="true"></span></span>
             </a>
         </section>
-        <a class="to-top" href="#diseno" aria-label="Volver arriba">↑</a>
+        <a class="to-top" href="#diseno" aria-label="Volver arriba"></a>
     </main>
 
     <!-- Web -->
@@ -487,43 +471,151 @@
                 <a href="#proyectos" class="back-arrow" aria-label="Volver a proyectos">←</a>
             </div>
 
-            <!-- Capturas en Web/. Con webs reales, usa la plantilla de abajo y borra el aviso "Próximamente" -->
-            <p class="empty-note">Próximamente: estoy preparando esta sección.</p>
-
             <div class="media-list">
-                <!-- Plantilla para una web nueva: copia este bloque sin las marcas de comentario
                 <div class="media-project">
-                    <div class="media-placeholder large">
-                        <img src="Web/nombre.jpg" alt="Captura de la web" onerror="this.hidden = true">
-                    </div>
+                    <a class="media-placeholder large" href="#foodcare" aria-label="Ver el proyecto Foodcare">
+                        <img data-base="Web/foodcare/portada" alt="Pantallas de la app Foodcare">
+                    </a>
                     <div class="media-description">
-                        <h3>Nombre de la web</h3>
-                        <p>Para quién es, qué hace y qué parte hiciste tú.</p>
-                        <ul class="work-tags" aria-label="Herramientas usadas"><li>HTML</li><li>CSS</li></ul>
-                        <a class="cv-button" href="https://tu-web.com" target="_blank" rel="noopener noreferrer">Ver web</a>
+                        <h3>Foodcare</h3>
+                        <p>Prototipo de app móvil sobre recetas de comida y cómo mantener una dieta sana, diseñado en Figma.</p>
+                        <ul class="work-tags" aria-label="Herramientas usadas"><li>Figma</li></ul>
+                        <a class="cv-button project-link" href="#foodcare">Ver proyecto</a>
                     </div>
                 </div>
-                -->
             </div>
 
             <a class="next-project" href="#ilustraciones">
                 <span class="next-project-label">Siguiente proyecto</span>
-                <span class="next-project-title">Ilustración <span aria-hidden="true">→</span></span>
+                <span class="next-project-title">Ilustración <span class="hand-arrow" aria-hidden="true"></span></span>
             </a>
         </section>
-        <a class="to-top" href="#web" aria-label="Volver arriba">↑</a>
+        <a class="to-top" href="#web" aria-label="Volver arriba"></a>
+    </main>
+
+    <!-- Foodcare -->
+    <main id="foodcare" class="subpage" hidden>
+        <section class="portfolio-section section">
+            <div class="section-heading">
+                <h1><span class="mark">Foodcare</span></h1>
+                <a href="#web" class="back-arrow" aria-label="Volver a Web">←</a>
+            </div>
+
+            <div class="media-list">
+                <div class="app-intro">
+                    <p>Prototipo de app móvil sobre recetas de comida y cómo mantener una dieta sana, diseñado en Figma.</p>
+                    <div class="app-themes" role="radiogroup" aria-label="Modo de las pantallas">
+                        <input class="app-theme" type="radio" name="foodcare-tema" id="foodcare-claro" checked>
+                        <label for="foodcare-claro">Modo claro</label>
+                        <input class="app-theme" type="radio" name="foodcare-tema" id="foodcare-oscuro">
+                        <label for="foodcare-oscuro">Modo oscuro</label>
+                    </div>
+                </div>
+
+                <div class="media-project">
+                    <div class="app-shots app-shots--3">
+                            <figure class="theme-claro"><img data-base="Web/foodcare/claro-01-bienvenida" alt="Foodcare, pantalla bienvenida en modo claro" loading="lazy" width="560" height="1244"><figcaption>Bienvenida</figcaption></figure>
+                            <figure class="theme-claro"><img data-base="Web/foodcare/claro-02-inicio" alt="Foodcare, pantalla inicio en modo claro" loading="lazy" width="560" height="1244"><figcaption>Inicio</figcaption></figure>
+                            <figure class="theme-claro"><img data-base="Web/foodcare/claro-03-inicio-compacto" alt="Foodcare, pantalla inicio compacto en modo claro" loading="lazy" width="560" height="1244"><figcaption>Inicio compacto</figcaption></figure>
+                            <figure class="theme-oscuro"><img data-base="Web/foodcare/oscuro-01-bienvenida" alt="Foodcare, pantalla bienvenida en modo oscuro" loading="lazy" width="560" height="1244"><figcaption>Bienvenida</figcaption></figure>
+                            <figure class="theme-oscuro"><img data-base="Web/foodcare/oscuro-02-inicio" alt="Foodcare, pantalla inicio en modo oscuro" loading="lazy" width="560" height="1244"><figcaption>Inicio</figcaption></figure>
+                            <figure class="theme-oscuro"><img data-base="Web/foodcare/oscuro-03-inicio-compacto" alt="Foodcare, pantalla inicio compacto en modo oscuro" loading="lazy" width="560" height="1244"><figcaption>Inicio compacto</figcaption></figure>
+                    </div>
+                    <div class="media-description">
+                        <h3>Bienvenida e inicio</h3>
+                        <p>Pantalla de bienvenida con inicio de sesión y registro. El inicio reúne la búsqueda por nombre o ingredientes, los filtros por tipo de comida, los avisos de productos que caducan y las recetas de las personas que sigues, con vista normal o compacta.</p>
+                    </div>
+                </div>
+
+                <div class="media-project">
+                    <div class="app-shots app-shots--3">
+                            <figure class="theme-claro"><img data-base="Web/foodcare/claro-04-buscador" alt="Foodcare, pantalla buscador en modo claro" loading="lazy" width="560" height="1244"><figcaption>Buscador</figcaption></figure>
+                            <figure class="theme-claro"><img data-base="Web/foodcare/claro-05-receta" alt="Foodcare, pantalla receta en modo claro" loading="lazy" width="560" height="1244"><figcaption>Receta</figcaption></figure>
+                            <figure class="theme-claro"><img data-base="Web/foodcare/claro-06-modo-cocina" alt="Foodcare, pantalla modo cocina en modo claro" loading="lazy" width="560" height="1244"><figcaption>Modo cocina</figcaption></figure>
+                            <figure class="theme-oscuro"><img data-base="Web/foodcare/oscuro-04-buscador" alt="Foodcare, pantalla buscador en modo oscuro" loading="lazy" width="560" height="1244"><figcaption>Buscador</figcaption></figure>
+                            <figure class="theme-oscuro"><img data-base="Web/foodcare/oscuro-05-receta" alt="Foodcare, pantalla receta en modo oscuro" loading="lazy" width="560" height="1244"><figcaption>Receta</figcaption></figure>
+                            <figure class="theme-oscuro"><img data-base="Web/foodcare/oscuro-06-modo-cocina" alt="Foodcare, pantalla modo cocina en modo oscuro" loading="lazy" width="560" height="1244"><figcaption>Modo cocina</figcaption></figure>
+                    </div>
+                    <div class="media-description">
+                        <h3>Buscar y cocinar</h3>
+                        <p>Buscador con sugerencias de recetas e ingredientes mientras escribes. La ficha de receta muestra alérgenos, tiempos, calorías y proteínas por ración, y los ingredientes ajustables según las raciones. El modo cocina guía paso a paso.</p>
+                    </div>
+                </div>
+
+                <div class="media-project">
+                    <div class="app-shots app-shots--3">
+                            <figure class="theme-claro"><img data-base="Web/foodcare/claro-07-descubrir" alt="Foodcare, pantalla descubrir en modo claro" loading="lazy" width="560" height="1244"><figcaption>Descubrir</figcaption></figure>
+                            <figure class="theme-claro"><img data-base="Web/foodcare/claro-08-mis-listas" alt="Foodcare, pantalla mis listas en modo claro" loading="lazy" width="560" height="1244"><figcaption>Mis listas</figcaption></figure>
+                            <figure class="theme-claro"><img data-base="Web/foodcare/claro-09-rankings" alt="Foodcare, pantalla rankings en modo claro" loading="lazy" width="560" height="1244"><figcaption>Rankings</figcaption></figure>
+                            <figure class="theme-oscuro"><img data-base="Web/foodcare/oscuro-07-descubrir" alt="Foodcare, pantalla descubrir en modo oscuro" loading="lazy" width="560" height="1244"><figcaption>Descubrir</figcaption></figure>
+                            <figure class="theme-oscuro"><img data-base="Web/foodcare/oscuro-08-mis-listas" alt="Foodcare, pantalla mis listas en modo oscuro" loading="lazy" width="560" height="1244"><figcaption>Mis listas</figcaption></figure>
+                            <figure class="theme-oscuro"><img data-base="Web/foodcare/oscuro-09-rankings" alt="Foodcare, pantalla rankings en modo oscuro" loading="lazy" width="560" height="1244"><figcaption>Rankings</figcaption></figure>
+                    </div>
+                    <div class="media-description">
+                        <h3>Descubrir y listas</h3>
+                        <p>Descubrir recoge las recetas más populares y las mejor valoradas. En Mis listas se guardan favoritos, colecciones, recetas y despensa, y se pueden crear rankings propios ordenando las recetas.</p>
+                    </div>
+                </div>
+
+                <div class="media-project">
+                    <div class="app-shots app-shots--2">
+                            <figure class="theme-claro"><img data-base="Web/foodcare/claro-10-diario" alt="Foodcare, pantalla diario en modo claro" loading="lazy" width="560" height="1244"><figcaption>Diario</figcaption></figure>
+                            <figure class="theme-claro"><img data-base="Web/foodcare/claro-11-mascota" alt="Foodcare, pantalla mascota en modo claro" loading="lazy" width="560" height="1244"><figcaption>Mascota</figcaption></figure>
+                            <figure class="theme-oscuro"><img data-base="Web/foodcare/oscuro-10-diario" alt="Foodcare, pantalla diario en modo oscuro" loading="lazy" width="560" height="1244"><figcaption>Diario</figcaption></figure>
+                            <figure class="theme-oscuro"><img data-base="Web/foodcare/oscuro-11-mascota" alt="Foodcare, pantalla mascota en modo oscuro" loading="lazy" width="560" height="1244"><figcaption>Mascota</figcaption></figure>
+                    </div>
+                    <div class="media-description">
+                        <h3>Diario y mascota</h3>
+                        <p>El diario resume los objetivos del día, con calorías y proteínas, y los registros de comida. Pipas, la mascota, sube de nivel con la experiencia y la racha de días, con calendario y logros.</p>
+                    </div>
+                </div>
+
+                <div class="media-project">
+                    <div class="app-shots app-shots--2">
+                            <figure class="theme-claro"><img data-base="Web/foodcare/claro-13-plan-semanal" alt="Foodcare, pantalla plan semanal en modo claro" loading="lazy" width="560" height="1244"><figcaption>Plan semanal</figcaption></figure>
+                            <figure class="theme-claro"><img data-base="Web/foodcare/claro-14-lista-compra" alt="Foodcare, pantalla lista de la compra en modo claro" loading="lazy" width="560" height="1244"><figcaption>Lista de la compra</figcaption></figure>
+                            <figure class="theme-oscuro"><img data-base="Web/foodcare/oscuro-13-plan-semanal" alt="Foodcare, pantalla plan semanal en modo oscuro" loading="lazy" width="560" height="1244"><figcaption>Plan semanal</figcaption></figure>
+                            <figure class="theme-oscuro"><img data-base="Web/foodcare/oscuro-14-lista-compra" alt="Foodcare, pantalla lista de la compra en modo oscuro" loading="lazy" width="560" height="1244"><figcaption>Lista de la compra</figcaption></figure>
+                    </div>
+                    <div class="media-description">
+                        <h3>Plan semanal y compra</h3>
+                        <p>Plan semanal con los huecos de desayuno, comida, merienda y cena de cada día, y lista de la compra generada con las recetas planificadas y su precio aproximado.</p>
+                    </div>
+                </div>
+
+                <div class="media-project">
+                    <div class="app-shots app-shots--2">
+                            <figure class="theme-claro"><img data-base="Web/foodcare/claro-12-perfil" alt="Foodcare, pantalla perfil en modo claro" loading="lazy" width="560" height="1244"><figcaption>Perfil</figcaption></figure>
+                            <figure class="theme-claro"><img data-base="Web/foodcare/claro-15-perfil-ajeno" alt="Foodcare, pantalla perfil de otra persona en modo claro" loading="lazy" width="560" height="1244"><figcaption>Perfil de otra persona</figcaption></figure>
+                            <figure class="theme-oscuro"><img data-base="Web/foodcare/oscuro-12-perfil" alt="Foodcare, pantalla perfil en modo oscuro" loading="lazy" width="560" height="1244"><figcaption>Perfil</figcaption></figure>
+                            <figure class="theme-oscuro"><img data-base="Web/foodcare/oscuro-15-perfil-ajeno" alt="Foodcare, pantalla perfil de otra persona en modo oscuro" loading="lazy" width="560" height="1244"><figcaption>Perfil de otra persona</figcaption></figure>
+                    </div>
+                    <div class="media-description">
+                        <h3>Perfil y comunidad</h3>
+                        <p>Perfil con recetas, seguidores y seguidos, y la mascota. También se puede ver el perfil de otras personas y seguirlas.</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <a class="next-project" href="#web">
+                <span class="next-project-label">Volver a</span>
+                <span class="next-project-title">Web <span class="hand-arrow" aria-hidden="true"></span></span>
+            </a>
+        </section>
+        <a class="to-top" href="#foodcare" aria-label="Volver arriba"></a>
     </main>
 
     <!-- Visor de imágenes y vídeo -->
     <div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="Ilustración ampliada">
         <button class="lightbox-close" type="button" aria-label="Cerrar">×</button>
-        <button class="lightbox-prev" type="button" aria-label="Anterior">←</button>
+        <button class="lightbox-prev" type="button" aria-label="Anterior"><span class="hand-arrow hand-arrow--back" aria-hidden="true"></span></button>
         <figure class="lightbox-figure">
             <img class="lightbox-img" src="" alt="">
             <img class="lightbox-mark" src="LogoHuevo.png" alt="" aria-hidden="true" draggable="false" onerror="this.hidden = true">
         </figure>
         <video class="lightbox-video" controls playsinline hidden></video>
-        <button class="lightbox-next" type="button" aria-label="Siguiente">→</button>
+        <button class="lightbox-next" type="button" aria-label="Siguiente"><span class="hand-arrow" aria-hidden="true"></span></button>
         <p class="lightbox-count"></p>
     </div>
 
@@ -537,7 +629,7 @@
         /* Portfolio · Marcos Agulló
            Cada bloque es independiente: menú, rutas, memory, visor, escritura del hero, tema, scroll y cursor. */
 
-        // Menú hamburguesa (solo se ve en móvil)
+        // Menú móvil
         (function () {
             var navbar = document.querySelector('.navbar');
             var toggle = document.querySelector('.nav-toggle');
@@ -553,7 +645,6 @@
                 setOpen(!navbar.classList.contains('menu-open'));
             });
 
-            // Se cierra al elegir una opción, al pulsar fuera o con Escape
             document.querySelectorAll('.nav-links a').forEach(function (link) {
                 link.addEventListener('click', function () { setOpen(false); });
             });
@@ -567,13 +658,11 @@
             });
         })();
 
-        // Enrutado simple por hash: cada "página" vive en el mismo HTML
-        // y se muestra u oculta según el fragmento de la URL.
+        // Páginas (enrutado por hash)
         (function () {
-            var subpageIds = ['ilustraciones', 'animacion-video', 'diseno', 'web', 'memory'];
+            var subpageIds = ['ilustraciones', 'animacion-video', 'diseno', 'web', 'foodcare', 'memory'];
             var homeView = document.getElementById('home-view');
 
-            // Fundido suave al entrar en una página
             function playEnter(el) {
                 if (!el) return;
                 el.classList.remove('page-enter');
@@ -585,7 +674,6 @@
                 var hash = location.hash.slice(1);
 
                 if (subpageIds.indexOf(hash) !== -1) {
-                    // Mostrar una página de proyecto concreta
                     homeView.hidden = true;
                     subpageIds.forEach(function (id) {
                         document.getElementById(id).hidden = (id !== hash);
@@ -593,7 +681,6 @@
                     playEnter(document.getElementById(hash));
                     window.scrollTo(0, 0);
                 } else {
-                    // Mostrar la página principal
                     if (homeView.hidden) playEnter(homeView);
                     homeView.hidden = false;
                     subpageIds.forEach(function (id) {
@@ -613,7 +700,7 @@
             window.addEventListener('DOMContentLoaded', route);
         })();
 
-        // Mini juego: memory con las ilustraciones (las toma de la página de Ilustraciones)
+        // Memory
         (function () {
             var grid = document.getElementById('memory-grid');
             if (!grid) return;
@@ -717,7 +804,6 @@
             }
 
             function start() {
-                // 5 ilustraciones al azar en cada partida (mejor las que sí tienen imagen)
                 var all = items();
                 var withImg = all.filter(function (it) {
                     var im = document.querySelector('.illustration-grid .art:nth-child(' + it.n + ') img');
@@ -740,7 +826,7 @@
             start();
         })();
 
-        // Menú: marca en amarillo la sección en la que estás
+        // Menú: sección activa
         (function () {
             var links = Array.prototype.slice.call(document.querySelectorAll('.nav-links a'));
             var homeView = document.getElementById('home-view');
@@ -758,7 +844,6 @@
             }
 
             function update() {
-                // En las páginas de proyecto se marca "Proyectos"
                 if (homeView.hidden) { setActive('proyectos'); return; }
 
                 var current = 'inicio';
@@ -783,7 +868,7 @@
             window.addEventListener('DOMContentLoaded', function () { setTimeout(update, 50); });
         })();
 
-        // Portadas con nombre fijo: prueba varias extensiones; si ninguna existe, se queda el placeholder
+        // Portadas: detección de extensión
         (function () {
             var exts = ['jpg', 'jpeg', 'png', 'webp'];
             document.querySelectorAll('img[data-base]').forEach(function (img) {
@@ -806,7 +891,7 @@
             });
         })();
 
-        // Visor de ilustraciones: se abren en grande al pulsarlas
+        // Visor de imágenes
         (function () {
             var box = document.getElementById('lightbox');
             var img = box.querySelector('.lightbox-img');
@@ -820,7 +905,6 @@
             var cover = false;
 
             function available() {
-                // Solo las ilustraciones cuya imagen existe
                 return arts.map(function (a) { return a.querySelector('img'); })
                     .filter(function (i) { return i && !i.hidden && i.naturalWidth > 0; });
             }
@@ -847,7 +931,6 @@
                 box.querySelector('.lightbox-close').focus();
             }
 
-            // Vídeos de las fichas: se abren en grande con el botón de ampliar
             function openVideo(source) {
                 var src = source.currentSrc || source.src;
                 lastFocus = document.activeElement;
@@ -926,7 +1009,6 @@
                 if (e.key === 'ArrowRight') show(index + 1);
             });
 
-            // Deslizar con el dedo en móvil
             var startX = null;
             box.addEventListener('touchstart', function (e) { startX = e.touches[0].clientX; }, { passive: true });
             box.addEventListener('touchend', function (e) {
@@ -936,11 +1018,10 @@
                 startX = null;
             });
 
-            // Si se cambia de página con el visor abierto, se cierra
             window.addEventListener('hashchange', function () { if (!box.hidden) close(); });
         })();
 
-        // Copiar el email con un clic
+        // Copiar email
         (function () {
             var btn = document.querySelector('.copy-email');
             if (!btn) return;
@@ -984,7 +1065,7 @@
             });
         })();
 
-        // Efecto máquina de escribir en el nombre del hero:
+        // Nombre del hero: máquina de escribir
         (function () {
             var title = document.getElementById('hero-title');
             if (!title) return;
@@ -1008,7 +1089,6 @@
                 lines.forEach(function (l) { l.classList.remove('active'); });
             }
 
-            // Al terminar de escribir, cada letra pasa a ser un span para poder reaccionar al ratón
             function wrapLetters() {
                 lines.forEach(function (l, i) {
                     l.textContent = '';
@@ -1064,7 +1144,7 @@
             lines.forEach(function (l) { l.textContent = ''; });
 
             var heroSection = document.querySelector('.hero');
-            var state = 'idle'; // idle | typed | erased
+            var state = 'idle';
 
             var observer = new IntersectionObserver(function (entries) {
                 entries.forEach(function (entry) {
@@ -1074,7 +1154,6 @@
                             typeForward();
                         }
                     } else if (entry.boundingClientRect.top < 0) {
-                        // El hero ha quedado por encima del viewport: se ha bajado en la página
                         if (state !== 'erased') {
                             state = 'erased';
                             eraseBackward();
@@ -1083,7 +1162,6 @@
                 });
             }, { threshold: 0.3 });
 
-            // Si hay pantalla de carga, el título se escribe cuando termina
             function startTyping() { if (heroSection) observer.observe(heroSection); }
             if (document.documentElement.classList.contains('loading')) {
                 document.addEventListener('loaderdone', startTyping, { once: true });
@@ -1092,7 +1170,7 @@
             }
         })();
 
-        // Pantalla de carga: se quita al cargar la página (mínimo un instante, máximo 4 s)
+        // Pantalla de carga: salida
         (function () {
             var root = document.documentElement;
             if (!root.classList.contains('loading')) return;
@@ -1116,7 +1194,7 @@
             setTimeout(finish, 4000);
         })();
 
-        // Modo oscuro: botón del header, se recuerda la elección
+        // Modo oscuro
         (function () {
             var root = document.documentElement;
             var btn = document.querySelector('.theme-toggle');
@@ -1142,12 +1220,12 @@
             sync();
         })();
 
-        // Aparición suave de tarjetas y trabajos al hacer scroll
+        // Aparición al hacer scroll
         (function () {
             if (!('IntersectionObserver' in window)) return;
             if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
-            var items = document.querySelectorAll('.project-card, .media-project, .art, .empty-note, .section-title, .in-progress-title, .tool-list, .about-card, .contact-link');
+            var items = document.querySelectorAll('.project-card, .media-project, .art, .section-title, .in-progress-title, .tool-list, .about-card, .contact-link');
             document.documentElement.classList.add('reveal-on');
 
             var io = new IntersectionObserver(function (entries) {
@@ -1160,13 +1238,12 @@
             }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
 
             items.forEach(function (el, i) {
-                // Pequeño escalonado entre elementos vecinos
                 el.style.setProperty('--reveal-delay', (i % 3) * 80 + 'ms');
                 io.observe(el);
             });
         })();
 
-        // Rotador de roles bajo el nombre: se escriben y se borran uno tras otro
+        // Rotador de roles
         (function () {
             var el = document.querySelector('.role-text');
             var caret = document.querySelector('.role-caret');
@@ -1201,7 +1278,6 @@
                 new IntersectionObserver(function (e) { visible = e[0].isIntersecting; }).observe(hero);
             }
 
-            // Empieza cuando el nombre ya se ha escrito (y la pantalla de carga se ha quitado)
             function start() { timer = setTimeout(tick, 1700); }
             if (document.documentElement.classList.contains('loading')) {
                 document.addEventListener('loaderdone', start, { once: true });
@@ -1210,7 +1286,7 @@
             }
         })();
 
-        // Duración de cada vídeo en su ficha (solo se leen los metadatos, no se descarga el vídeo)
+        // Duración de los vídeos
         (function () {
             document.querySelectorAll('.media-placeholder video[controls]').forEach(function (v) {
                 var desc = v.closest('.media-project') && v.closest('.media-project').querySelector('.media-description');
@@ -1233,19 +1309,18 @@
             });
         })();
 
-        // Carga suave de imágenes: aparecen con un fundido cuando terminan de cargar
+        // Carga de imágenes
         (function () {
             var imgs = document.querySelectorAll('.thumb-media:not(video), .art img, .media-placeholder img');
             imgs.forEach(function (img) {
-                if (img.complete && img.naturalWidth > 0) return; // ya cargada: se ve directamente
+                if (img.complete && img.naturalWidth > 0) return;
                 img.classList.add('fade-img');
                 img.addEventListener('load', function () { img.classList.add('is-loaded'); }, { once: true });
-                // Si falla (el archivo no existe) no se muestra nada, como antes
                 img.addEventListener('error', function () { img.classList.add('is-loaded'); }, { once: true });
             });
         })();
 
-        // Botón flotante de contacto (móvil): aparece al bajar y se esconde al llegar a Contacto
+        // Botón flotante de contacto
         (function () {
             var fab = document.querySelector('.fab-contact');
             var target = document.getElementById('contacto');
@@ -1257,7 +1332,6 @@
                 var home = !document.getElementById('home-view').hidden;
                 var show = window.scrollY > 500 && !(home && contactVisible);
                 fab.classList.toggle('is-visible', show);
-                // Solo es accesible mientras se ve
                 fab.setAttribute('aria-hidden', show ? 'false' : 'true');
                 fab.tabIndex = show ? 0 : -1;
                 ticking = false;
@@ -1273,7 +1347,7 @@
             update();
         })();
 
-        // Protección básica de las imágenes: sin clic derecho ni arrastrar (no impide capturas de pantalla)
+        // Protección de imágenes
         (function () {
             var protegido = '.art, .art img, img.thumb-media, .media-placeholder img, .lightbox-figure, .lightbox-img';
             document.addEventListener('contextmenu', function (e) {
@@ -1284,7 +1358,7 @@
             });
         })();
 
-        // Logo del menú: se encoge y se inclina un poco al bajar por la página
+        // Logo del menú
         (function () {
             var nav = document.querySelector('.navbar');
             if (!nav) return;
@@ -1293,7 +1367,7 @@
             update();
         })();
 
-        // Barra de progreso: se llena a medida que se baja en la página
+        // Barra de progreso
         (function () {
             var bar = document.querySelector('.scroll-progress');
             if (!bar) return;
@@ -1313,17 +1387,15 @@
             update();
         })();
 
-        // Cursor: un huevo que sustituye al cursor normal en toda la página
+        // Cursor
         (function () {
             var egg = document.querySelector('.egg-cursor');
             if (!egg) return;
-            // Solo con ratón de verdad: no en móvil, ni en pantallas táctiles, ni en ventanas estrechas
             var desktopMQ = window.matchMedia('(pointer: fine) and (hover: hover) and (min-width: 701px)');
             if (!desktopMQ.matches) return;
 
             var root = document.documentElement;
             var off = false;
-            // En vídeos y campos de texto se deja el cursor normal para poder usarlos
             var native = 'video, input, textarea';
             var x = -100, y = -100, moved = false, idleTimer = null;
 
@@ -1339,21 +1411,17 @@
                 egg.classList.toggle('is-visible', over);
             }
 
-            // Mira qué hay bajo el ratón ahora mismo (por si la página se ha movido sola)
             function recheck() {
                 if (!moved) return;
                 var el = document.elementFromPoint(x, y);
                 setOver(!(el && el.closest(native)));
             }
 
-            // Tras un scroll o un cambio de página se espera a que se calme y se vuelve a mirar,
-            // así el huevo no parpadea mientras pasan elementos por debajo del ratón
             function recheckLater() {
                 clearTimeout(idleTimer);
                 idleTimer = setTimeout(recheck, 140);
             }
 
-            // Si se toca la pantalla o se estrecha la ventana, el huevo se quita y no vuelve a salir
             function disable() {
                 off = true;
                 moved = false;
@@ -1374,7 +1442,6 @@
 
             window.addEventListener('scroll', recheckLater, { passive: true });
             window.addEventListener('hashchange', function () {
-                // Entre cambio de página y recolocación puede tardar un momento
                 clearTimeout(idleTimer);
                 idleTimer = setTimeout(recheck, 250);
             });
@@ -1387,7 +1454,7 @@
             window.addEventListener('mouseup', function () { egg.classList.remove('is-down'); });
         })();
 
-        // Herramientas: al pulsar una, lleva a los trabajos que la usan
+        // Herramientas
         (function () {
             var tools = document.querySelectorAll('.tool-list span');
             var tags = Array.prototype.slice.call(document.querySelectorAll('.subpage .work-tags li'));
@@ -1398,7 +1465,6 @@
                 var n = norm(name);
                 var works = [];
                 tags.forEach(function (li) {
-                    // "Substance" también encuentra "Substance Painter"
                     if (norm(li.textContent).indexOf(n) === 0) {
                         var work = li.closest('.media-project');
                         if (work && works.indexOf(work) === -1) works.push(work);
