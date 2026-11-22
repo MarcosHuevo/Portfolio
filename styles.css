@@ -10,7 +10,6 @@
                           13. Efectos y carga
 */
 
-
 /* ---------- 1. Base y variables ---------- */
 
 * {
@@ -77,7 +76,7 @@ img {
     --pop-shadow: rgba(23, 23, 23, .12);
     --menu-bg: rgba(245, 242, 234, 0.97);
     --menu-hover: rgba(23, 23, 23, 0.05);
-    --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n' color-interpolation-filters='sRGB'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0.12 0 0 0 0.901 0.12 0 0 0 0.889 0.12 0 0 0 0.858 0 0 0 0 1'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n' color-interpolation-filters='sRGB'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0.17 0 0 0 0.875 0.17 0 0 0 0.863 0.17 0 0 0 0.832 0 0 0 0 1'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
 :root[data-theme="dark"] {
@@ -98,7 +97,7 @@ img {
     --pop-shadow: rgba(0, 0, 0, .45);
     --menu-bg: rgba(22, 21, 18, 0.97);
     --menu-hover: rgba(239, 233, 220, 0.07);
-    --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n' color-interpolation-filters='sRGB'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0.12 0 0 0 0.026 0.12 0 0 0 0.022 0.12 0 0 0 0.011 0 0 0 0 1'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n' color-interpolation-filters='sRGB'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0.17 0 0 0 0.016 0.17 0 0 0 0.014 0.17 0 0 0 0.006 0 0 0 0 1'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
 .section {
@@ -111,7 +110,6 @@ img {
         width: min(var(--max-width), calc(100% - 28px));
     }
 }
-
 
 /* ---------- 2. Cabecera ---------- */
 
@@ -343,7 +341,6 @@ img {
     }
 }
 
-
 /* ---------- 3. Portada (hero) ---------- */
 
 .hero {
@@ -547,7 +544,6 @@ img {
     }
 }
 
-
 /* ---------- 4. Títulos ---------- */
 
 .section-title h2,
@@ -569,7 +565,6 @@ img {
     padding: 0 .08em;
     margin-left: -.08em;
 }
-
 
 /* ---------- 5. Proyectos ---------- */
 
@@ -889,7 +884,6 @@ img {
     }
 }
 
-
 /* ---------- 6. Páginas de trabajos ---------- */
 
 .portfolio-section {
@@ -967,6 +961,15 @@ img {
     grid-template-columns: 1.5fr .8fr;
     gap: 45px;
     align-items: center;
+}
+
+.media-project:not(:has(.media-placeholder, .app-shots)),
+.media-project:has(.media-placeholder > img[hidden]) {
+    grid-template-columns: minmax(0, 720px);
+}
+
+.media-placeholder:has(> img[hidden]) {
+    display: none;
 }
 
 .media-placeholder {
@@ -1129,7 +1132,6 @@ img.thumb-media,
     }
 }
 
-
 /* ---------- 7. Visor de imágenes ---------- */
 
 .lightbox {
@@ -1251,7 +1253,6 @@ img.thumb-media,
     }
 }
 
-
 .hand-arrow {
     display: inline-block;
     flex: none;
@@ -1281,7 +1282,6 @@ img.thumb-media,
     vertical-align: baseline;
 }
 
-
 .pdf-cover,
 a.media-placeholder {
     display: block;
@@ -1291,7 +1291,6 @@ a.media-placeholder {
 .media-description .project-link {
     margin-top: 18px;
 }
-
 
 .project-list::before,
 .next-project::before,
@@ -1332,7 +1331,6 @@ footer::before {
     bottom: -4px;
 }
 
-
 /* ---------- Foodcare: pantallas de la app ---------- */
 
 .app-intro {
@@ -1350,6 +1348,12 @@ footer::before {
 .app-intro p {
     margin-top: 14px;
 }
+
+.app-intro .work-tags {
+    gap: 12px;
+    margin: 0 0 20px;
+}
+
 
 .app-themes {
     display: flex;
@@ -1424,7 +1428,6 @@ footer::before {
     text-align: center;
     opacity: .85;
 }
-
 
 /* ---------- 8. Sobre mí ---------- */
 
@@ -1563,7 +1566,6 @@ footer::before {
     }
 }
 
-
 /* ---------- 9. Herramientas ---------- */
 
 .tools {
@@ -1695,7 +1697,6 @@ footer::before {
     }
 }
 
-
 /* ---------- 10. Contacto y pie ---------- */
 
 .contact {
@@ -1821,7 +1822,6 @@ footer p {
         font-size: 13px;
     }
 }
-
 
 /* ---------- 11. Botones e iconos ---------- */
 
@@ -2116,7 +2116,6 @@ footer p {
     }
 }
 
-
 /* ---------- 12. Memory ---------- */
 
 .memory-intro {
@@ -2315,7 +2314,6 @@ footer p {
         transition: none;
     }
 }
-
 
 /* ---------- 13. Efectos y carga ---------- */
 

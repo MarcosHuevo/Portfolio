@@ -146,15 +146,17 @@
 
                 <div class="project-list">
 
-                    <div class="project-card project-card--wip">
+                    <a class="project-card project-card--wip" href="#actos-anonimos">
                         <div class="project-thumb wip-thumb">
+                            <img class="thumb-media cover-img" src="Web/actos-anonimos/portada.webp" alt="Página web de Actos Anónimos" onerror="this.hidden = true">
                             <span class="wip-badge">En curso</span>
                         </div>
                         <div class="project-info">
                             <h4>Colaboración con Actos Anónimos</h4>
-                            <p>Colaboro con la cuenta de Instagram @actos.anonimos: estoy trabajando para su imagen online.</p>
+                            <p>Colaboro con la cuenta de Instagram @actos.anonimos: estoy trabajando para su imagen online y creando el prototipo de su página web.</p>
                         </div>
-                    </div>
+                        <span class="card-arrow" aria-hidden="true"></span>
+                    </a>
 
                     <div class="project-card project-card--wip">
                         <div class="project-thumb wip-thumb">
@@ -395,7 +397,7 @@
                         <div class="hill hill-back"></div>
                         <div class="hill hill-front"></div>
                         <div class="building"></div>
-                        <video src="AnimacionVideo/RenderPrograma.mp4" poster="AnimacionVideo/RenderPrograma.jpg" controls playsinline preload="none" onerror="this.hidden = true"></video>
+                        <video src="AnimacionVideo/RenderPrograma.mp4" poster="AnimacionVideo/RenderPrograma.jpg" controls playsinline preload="metadata"></video>
                     </div>
                     <div class="media-description">
                         <h3>Edición de anuncio</h3>
@@ -481,6 +483,18 @@
                         <p>Prototipo de app móvil sobre recetas de comida y cómo mantener una dieta sana, diseñado en Figma.</p>
                         <ul class="work-tags" aria-label="Herramientas usadas"><li>Figma</li></ul>
                         <a class="cv-button project-link" href="#foodcare">Ver proyecto</a>
+                    </div>
+                </div>
+
+                <div class="media-project">
+                    <a class="media-placeholder large" href="#actos-anonimos" aria-label="Ver el proyecto Actos Anónimos">
+                        <img data-base="Web/actos-anonimos/portada" alt="Página web de Actos Anónimos">
+                    </a>
+                    <div class="media-description">
+                        <h3>Actos Anónimos</h3>
+                        <p>Prototipo de la página web del proyecto solidario Actos Anónimos. Está en desarrollo y solo se muestra una parte.</p>
+                        <ul class="work-tags" aria-label="Herramientas usadas"><li>Prototipo</li><li>HTML</li><li>CSS</li></ul>
+                        <a class="cv-button project-link" href="#actos-anonimos">Ver proyecto</a>
                     </div>
                 </div>
             </div>
@@ -606,6 +620,66 @@
         <a class="to-top" href="#foodcare" aria-label="Volver arriba"></a>
     </main>
 
+        <!-- Actos Anónimos -->
+    <main id="actos-anonimos" class="subpage" hidden>
+        <section class="portfolio-section section">
+            <div class="section-heading">
+                <h1><span class="mark">Actos Anónimos</span></h1>
+                <a href="#web" class="back-arrow" aria-label="Volver a Web">←</a>
+            </div>
+
+            <div class="media-list">
+                <div class="app-intro">
+                    <ul class="work-tags" aria-label="Estado del proyecto"><li>Prototipo</li><li>En desarrollo</li></ul>
+                    <p>Actos Anónimos es un proyecto solidario de dos primos de Madrid que hacen pequeños actos de bondad y los cuentan en redes. Contactaron conmigo para crear la identidad visual de la marca y, además, su página web. Lo que se muestra aquí es un prototipo de cómo se vería el resultado: la web sigue en desarrollo y no es la versión final, así que solo se enseña una parte.</p>
+                </div>
+
+                <div class="media-project">
+                    <div class="media-placeholder large">
+                        <img data-base="Web/actos-anonimos/01-inicio" alt="Portada del prototipo de la web de Actos Anónimos" loading="lazy">
+                    </div>
+                    <div class="media-description">
+                        <h3>Portada</h3>
+                        <p>Presenta el proyecto con su lema y dos botones de acción, sobre un fondo de cristal con manchas de color. Es la primera impresión de la web y define el estilo del resto.</p>
+                    </div>
+                </div>
+
+                <div class="media-project">
+                    <div class="media-placeholder large">
+                        <img data-base="Web/actos-anonimos/02-quienes-somos" alt="Sección de presentación del prototipo" loading="lazy">
+                    </div>
+                    <div class="media-description">
+                        <h3>Presentación del proyecto</h3>
+                        <p>Explica quiénes están detrás y qué quieren conseguir con tarjetas breves, con un diseño limpio, mucho espacio y textos cercanos.</p>
+                    </div>
+                </div>
+
+                <div class="media-project">
+                    <div class="media-placeholder large">
+                        <img data-base="Web/actos-anonimos/07-modo-oscuro" alt="Portada del prototipo en modo oscuro" loading="lazy">
+                    </div>
+                    <div class="media-description">
+                        <h3>Modo oscuro</h3>
+                        <p>La web se adapta al modo claro y oscuro, tiene opciones de accesibilidad y está pensada para verse bien en móvil.</p>
+                    </div>
+                </div>
+
+                <div class="media-project">
+                    <div class="media-description">
+                        <h3>Qué incluye el prototipo</h3>
+                        <p>Además de lo que se ve aquí, el prototipo está probando otras secciones y funciones que de momento se mantienen en privado hasta que el producto esté terminado.</p>
+                    </div>
+                </div>
+            </div>
+
+            <a class="next-project" href="#web">
+                <span class="next-project-label">Volver a</span>
+                <span class="next-project-title">Web <span class="hand-arrow" aria-hidden="true"></span></span>
+            </a>
+        </section>
+        <a class="to-top" href="#actos-anonimos" aria-label="Volver arriba"></a>
+    </main>
+
     <!-- Visor de imágenes y vídeo -->
     <div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="Ilustración ampliada">
         <button class="lightbox-close" type="button" aria-label="Cerrar">×</button>
@@ -660,7 +734,7 @@
 
         // Páginas (enrutado por hash)
         (function () {
-            var subpageIds = ['ilustraciones', 'animacion-video', 'diseno', 'web', 'foodcare', 'memory'];
+            var subpageIds = ['ilustraciones', 'animacion-video', 'diseno', 'web', 'foodcare', 'actos-anonimos', 'memory'];
             var homeView = document.getElementById('home-view');
 
             function playEnter(el) {
